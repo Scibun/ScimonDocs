@@ -44,7 +44,7 @@ cargo build
 This command compiles your project and places the output binaries in the `target/debug` directory. You should see output similar to:
 
 ```
-Compiling my_project v0.1.0 (/path/to/your/project)
+Compiling scimon v0.1.0 (/path/to/your/project)
     Finished dev [unoptimized + debuginfo] target(s) in 2.34s
 ```
 
@@ -69,7 +69,7 @@ cargo build --release
 This command compiles your project with optimizations and places the output binaries in the `target/release` directory. The output will be similar to:
 
 ```
-Compiling my_project v0.1.0 (/path/to/your/project)
+Compiling scimon v0.1.0 (/path/to/your/project)
     Finished release [optimized] target(s) in 2m 13s
 ```
 
@@ -88,7 +88,7 @@ Compiling my_project v0.1.0 (/path/to/your/project)
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/username/repository.git
+   git clone https://github.com/Scibun/Scimon.git
    cd repository
    ```
 2. Setup your environment:
@@ -98,7 +98,7 @@ Compiling my_project v0.1.0 (/path/to/your/project)
    ```
 3. Navigate to your project directory (if not already there):
    ```sh
-   cd path/to/your/project
+   cd Scimon
    ```
 4. Build the project:
    ```sh
