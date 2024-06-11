@@ -1,0 +1,722 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Scimon: Docs</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">6.</strong> Open links</a></li><li class="chapter-item expanded "><a href="checksum.html"><strong aria-hidden="true">7.</strong> Checksum and Checksum Validate</a></li><li class="chapter-item expanded "><a href="directives.html"><strong aria-hidden="true">8.</strong> Directives and Comments</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">9.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">10.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">11.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">12.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">13.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">14.</strong> External Resources Usage</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Scimon: Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="how-to-build"><a class="header" href="#how-to-build">How to Build</a></h1>
+<h3 id="1-clone-the-repository"><a class="header" href="#1-clone-the-repository">1. Clone the Repository</a></h3>
+<p>If you don't already have the project on your local machine, you need to clone the repository from Git. Open a terminal and run:</p>
+<pre><code class="language-sh">git clone https://github.com/Scibun/Scimon.git
+</code></pre>
+<h3 id="2-setup-your-environment"><a class="header" href="#2-setup-your-environment">2. Setup Your Environment</a></h3>
+<p>Ensure that Rust and Cargo are installed and added to your system's PATH. You can check this by running:</p>
+<pre><code class="language-sh">rustc --version
+cargo --version
+</code></pre>
+<p>If Rust and Cargo are properly installed, these commands should return the version numbers.</p>
+<h3 id="3-navigate-to-your-project-directory"><a class="header" href="#3-navigate-to-your-project-directory">3. Navigate to Your Project Directory</a></h3>
+<p>Open a terminal and navigate to the root directory of your Rust project. For example:</p>
+<pre><code class="language-sh">cd Scimon
+</code></pre>
+<p>If you just cloned the repository, navigate to the newly created directory:</p>
+<pre><code class="language-sh">cd Scimon
+</code></pre>
+<h3 id="4-build-the-project"><a class="header" href="#4-build-the-project">4. Build the Project</a></h3>
+<p>To build the project, simply run:</p>
+<pre><code class="language-sh">cargo build
+</code></pre>
+<p>This command compiles your project and places the output binaries in the <code>target/debug</code> directory. You should see output similar to:</p>
+<pre><code>Compiling scimon v0.1.0 (/path/to/your/project)
+    Finished dev [unoptimized + debuginfo] target(s) in 2.34s
+</code></pre>
+<h3 id="5-run-the-project"><a class="header" href="#5-run-the-project">5. Run the Project</a></h3>
+<p>To run the project after building it, use:</p>
+<pre><code class="language-sh">cargo run
+</code></pre>
+<p>This command builds and runs the project in one step.</p>
+<h3 id="6-building-for-release"><a class="header" href="#6-building-for-release">6. Building for Release</a></h3>
+<p>If you want to build an optimized release version of your project, run:</p>
+<pre><code class="language-sh">cargo build --release
+</code></pre>
+<p>This command compiles your project with optimizations and places the output binaries in the <code>target/release</code> directory. The output will be similar to:</p>
+<pre><code>Compiling scimon v0.1.0 (/path/to/your/project)
+    Finished release [optimized] target(s) in 2m 13s
+</code></pre>
+<h3 id="additional-commands"><a class="header" href="#additional-commands">Additional Commands</a></h3>
+<ul>
+<li><strong>Clean the Project</strong>: To remove the <code>target</code> directory and clean the project, run:
+<pre><code class="language-sh">cargo clean
+</code></pre>
+</li>
+<li><strong>Run Tests</strong>: To run tests defined in your project, use:
+<pre><code class="language-sh">cargo test
+</code></pre>
+</li>
+</ul>
+<h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ol>
+<li>Clone the repository:
+<pre><code class="language-sh">git clone https://github.com/Scibun/Scimon.git
+cd repository
+</code></pre>
+</li>
+<li>Setup your environment:
+<pre><code class="language-sh">rustc --version
+cargo --version
+</code></pre>
+</li>
+<li>Navigate to your project directory (if not already there):
+<pre><code class="language-sh">cd Scimon
+</code></pre>
+</li>
+<li>Build the project:
+<pre><code class="language-sh">cargo build
+</code></pre>
+</li>
+<li>Run the project:
+<pre><code class="language-sh">cargo run
+</code></pre>
+</li>
+<li>For a release build:
+<pre><code class="language-sh">cargo build --release
+</code></pre>
+</li>
+</ol>
+<p>By following these steps, you can successfully clone, build, and run your Scimon.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="basic-usage"><a class="header" href="#basic-usage">Basic Usage</a></h1>
+<h2 id="download-via-lists"><a class="header" href="#download-via-lists">Download via Lists</a></h2>
+<p>You can download files using a local or remote list with <code>scimon</code>. Here are the instructions for both methods:</p>
+<h3 id="downloading-files-with-a-local-list"><a class="header" href="#downloading-files-with-a-local-list">Downloading Files with a Local List</a></h3>
+<p>To download files specified in a local list, use the following command:</p>
+<pre><code class="language-shell">scimon -r scimon.mon
+</code></pre>
+<h3 id="downloading-files-with-a-remote-list"><a class="header" href="#downloading-files-with-a-remote-list">Downloading Files with a Remote List</a></h3>
+<p>To download files specified in a remote list, use the following command:</p>
+<pre><code class="language-shell">scimon -r https://raw.githubusercontent.com/Ravenlib/Paimon/main/scimon.mon
+</code></pre>
+<h2 id="useful-flags-for-download-list"><a class="header" href="#useful-flags-for-download-list">Useful Flags for Download List</a></h2>
+<p>There are several flags available to customize the download process. Here are some commonly used ones:</p>
+<h3 id="download-without-skipping-any-files"><a class="header" href="#download-without-skipping-any-files">Download Without Skipping Any Files</a></h3>
+<p>Use the <code>--no-ignore</code> flag to download all files without skipping any:</p>
+<pre><code class="language-shell">scimon -r scimon.mon --no-ignore
+</code></pre>
+<h3 id="skip-all-comments"><a class="header" href="#skip-all-comments">Skip All Comments</a></h3>
+<p>Use the <code>--no-comments</code> flag to skip downloading lines that are comments:</p>
+<pre><code class="language-shell">scimon -r scimon.mon --no-comments
+</code></pre>
+<h3 id="skip-readme-file-rendering"><a class="header" href="#skip-readme-file-rendering">Skip README File Rendering</a></h3>
+<p>Use the <code>--no-readme</code> flag to skip rendering README files during the download process:</p>
+<pre><code class="language-shell">scimon -r scimon.mon --no-readme
+</code></pre>
+<h3 id="skip-checksum-generation"><a class="header" href="#skip-checksum-generation">Skip Checksum Generation</a></h3>
+<p>Use the <code>--no-checksum</code> flag to skip the generation of checksums for downloaded files:</p>
+<pre><code class="language-shell">scimon -r scimon.mon --no-checksum
+</code></pre>
+<h3 id="skip-checksum-validation"><a class="header" href="#skip-checksum-validation">Skip Checksum Validation</a></h3>
+<p>Use the <code>--no-checksum-validate</code> flag to skip the validation of checksums for downloaded files:</p>
+<pre><code class="language-shell">scimon -r scimon.mon --no-checksum-validate
+</code></pre>
+<p>By using these flags, you can control how <code>scimon</code> handles different parts of the download list, ensuring a customized download process according to your needs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="flags"><a class="header" href="#flags">Flags</a></h1>
+<h2 id="flags-and-options"><a class="header" href="#flags-and-options">Flags and Options</a></h2>
+<h3 id="--url---u"><a class="header" href="#--url---u"><code>--url</code> / <code>-u</code></a></h3>
+<p><strong>Description</strong>: Specifies the URL to perform scraping on a page.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --url http://example.com
+</code></pre>
+<h3 id="--scrape"><a class="header" href="#--scrape"><code>--scrape</code></a></h3>
+<p><strong>Description</strong>: Selects the scrape mode. When this flag is set, <code>scimon</code> will perform scraping as per the provided URL.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --scrape
+</code></pre>
+<h3 id="--run---r"><a class="header" href="#--run---r"><code>--run</code> / <code>-r</code></a></h3>
+<p><strong>Description</strong>: Executes a list of tasks or runs a specific task defined in the list. You can specify the task file or task name.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --run tasks.toml
+</code></pre>
+<h3 id="--no-ignore"><a class="header" href="#--no-ignore"><code>--no-ignore</code></a></h3>
+<p><strong>Description</strong>: Ensures that no PDF files are ignored during the download process.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --no-ignore
+</code></pre>
+<h3 id="--no-checksum"><a class="header" href="#--no-checksum"><code>--no-checksum</code></a></h3>
+<p><strong>Description</strong>: Disables the generation of checksums for downloaded files.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --no-checksum
+</code></pre>
+<h3 id="--no-checksum-validate"><a class="header" href="#--no-checksum-validate"><code>--no-checksum-validate</code></a></h3>
+<p><strong>Description</strong>: Disables the validation of checksums for downloaded files. This can be used if you want to skip checksum verification.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --no-checksum-validate
+</code></pre>
+<h3 id="--no-comments"><a class="header" href="#--no-comments"><code>--no-comments</code></a></h3>
+<p><strong>Description</strong>: Disables the processing of comments and the <code>!debug</code> directive in the download list. This can be useful for skipping unnecessary lines during processing.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --no-comments
+</code></pre>
+<h3 id="--no-open_link"><a class="header" href="#--no-open_link"><code>--no-open_link</code></a></h3>
+<p><strong>Description</strong>: Disables the processing of the <code>!open_link</code> directive. This is useful if you do not want <code>scimon</code> to handle external links specified in the list.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --no-open_link
+</code></pre>
+<h3 id="--no-readme"><a class="header" href="#--no-readme"><code>--no-readme</code></a></h3>
+<p><strong>Description</strong>: Disables the rendering of README files during the download process. This can be useful to skip the processing of README instructions.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --no-readme
+</code></pre>
+<h3 id="--options"><a class="header" href="#--options"><code>--options</code></a></h3>
+<p><strong>Description</strong>: Specifies additional settings for <code>scimon</code>. You can provide a configuration file or specific options as a string.</p>
+<p><strong>Usage</strong>:</p>
+<pre><code class="language-shell">scimon --options settings.toml
+</code></pre>
+<hr />
+<p>By using these flags, you can customize the behavior of <code>scimon</code> to suit your specific needs, ensuring a more tailored and efficient download and scraping process.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="downloads-block"><a class="header" href="#downloads-block">Download's Block</a></h1>
+<h3 id="url-list"><a class="header" href="#url-list">URL List</a></h3>
+<p>You can specify multiple URLs for downloading files. Each URL should be placed on a new line. Optionally, you can append <code>!ignore</code> to a URL to indicate that it should be skipped during the download process.</p>
+<h4 id="example-usage"><a class="header" href="#example-usage">Example Usage:</a></h4>
+<pre><code class="language-plaintext">downloads {
+    https://example.com/file1.pdf !ignore
+    https://example.com/file2.pdf
+    https://example.com/file3.pdf !ignore
+    https://example.com/file4.pdf
+    https://example.com/file5.pdf !ignore
+    https://example.com/file6.pdf
+}
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li><code>https://example.com/file1.pdf</code> will be skipped because it is followed by <code>!ignore</code>.</li>
+<li><code>https://example.com/file2.pdf</code> will be downloaded.</li>
+<li><code>https://example.com/file3.pdf</code> will be skipped because it is followed by <code>!ignore</code>.</li>
+<li><code>https://example.com/file4.pdf</code> will be downloaded.</li>
+<li><code>https://example.com/file5.pdf</code> will be skipped because it is followed by <code>!ignore</code>.</li>
+<li><code>https://example.com/file6.pdf</code> will be downloaded.</li>
+</ul>
+<h3 id="path-configuration"><a class="header" href="#path-configuration">Path Configuration</a></h3>
+<p>You can specify the directory where the downloaded files should be stored by setting the <code>path</code> variable. This ensures that all files are saved in the specified folder in your file system.</p>
+<h4 id="example-usage-1"><a class="header" href="#example-usage-1">Example Usage:</a></h4>
+<pre><code class="language-plaintext">path="path/to/folder"
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>All downloaded files will be stored in the directory <code>path/to/folder</code>.</li>
+</ul>
+<h3 id="ignoring-specific-urls"><a class="header" href="#ignoring-specific-urls">Ignoring Specific URLs</a></h3>
+<p>The <code>!ignore</code> macro allows you to skip specific URLs in your download list. This is useful if you have certain files that you do not want to download during a particular operation.</p>
+<h4 id="example-usage-2"><a class="header" href="#example-usage-2">Example Usage:</a></h4>
+<pre><code class="language-plaintext">https://example.com/file1.pdf !ignore
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The URL <code>https://example.com/file1.pdf</code> will be omitted from the download process because it is followed by the <code>!ignore</code> directive.</li>
+</ul>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<ol>
+<li>
+<p><strong>Download URLs</strong>: List URLs line by line. Append <code>!ignore</code> to skip specific URLs.</p>
+<pre><code class="language-plaintext">downloads {
+    https://example.com/file1.pdf !ignore
+    https://example.com/file2.pdf
+}
+</code></pre>
+</li>
+<li>
+<p><strong>Set Download Directory</strong>: Define where the files should be saved using the <code>path</code> variable.</p>
+<pre><code class="language-plaintext">path="path/to/folder"
+</code></pre>
+</li>
+<li>
+<p><strong>Skip Specific URLs</strong>: Use <code>!ignore</code> to bypass certain URLs.</p>
+<pre><code class="language-plaintext">https://example.com/file1.pdf !ignore
+</code></pre>
+</li>
+</ol>
+<p>By following these instructions, you can efficiently manage your download list, specify storage directories, and selectively ignore certain files.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="readme-block"><a class="header" href="#readme-block">Readme Block</a></h1>
+<h2 id="variable"><a class="header" href="#variable">Variable</a></h2>
+<p>The <code>readme{}</code> block in the list file allows for the direct rendering of Markdown content within the list file itself.</p>
+<h3 id="fetching-content"><a class="header" href="#fetching-content">Fetching Content:</a></h3>
+<p>The URL specified in the <code>readme</code> variable is accessed to retrieve the Markdown content.</p>
+<h3 id="converting-to-text"><a class="header" href="#converting-to-text">Converting to Text:</a></h3>
+<p>The retrieved content is then converted to text format. This text content is assumed to be in Markdown format.</p>
+<h3 id="rendering-markdown"><a class="header" href="#rendering-markdown">Rendering Markdown:</a></h3>
+<p>The Markdown content retrieved from the URL is rendered directly within the list file. This means that you can include Markdown snippets within the list file, and Paimon will automatically render them during processing.</p>
+<h4 id="example-usage-3"><a class="header" href="#example-usage-3">Example Usage:</a></h4>
+<pre><code class="language-plaintext">readme = "http://example.com/readme.md"
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The <code>readme</code> variable is assigned the URL <code>"http://example.com/readme.md"</code>.</li>
+<li>Scimon will fetch the content from the specified URL and process it as described above.</li>
+</ul>
+<h2 id="block"><a class="header" href="#block">Block</a></h2>
+<p>The Markdown content retrieved from the URL is rendered directly within the list file. This means that you can include Markdown snippets within the list file, and Paimon will automatically render them during processing.</p>
+<h4 id="example-usage-4"><a class="header" href="#example-usage-4">Example Usage:</a></h4>
+<pre><code class="language-plaintext">readme {
+    # My Project
+
+    This is an example of how you can use the `readme{}` block to include Markdown content directly in the Paimon list file.
+
+    ## Example Section
+
+    Here's an example of Python code:
+
+    ```python
+    def hello_world():
+        print("Hello, world!")
+    ```
+
+    ![Example Image](https://example.com/image.png)
+}
+</code></pre>
+<p>In the above example:</p>
+<ul>
+<li>The content inside the <code>readme{}</code> block is treated as Markdown.</li>
+<li>It can include titles, paragraphs, code, images, and other Markdown-supported elements.</li>
+<li>During the processing of the list file, Scimon will render this Markdown content within the context of the list file.</li>
+</ul>
+<p>This provides a convenient way to include documentation, code examples, images, and other elements directly within the list file, keeping everything in one place and making it easy to maintain and share the content.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="open-links"><a class="header" href="#open-links">Open links</a></h1>
+<h2 id="open-variable"><a class="header" href="#open-variable">Open Variable</a></h2>
+<p>The <code>open</code> variable specifies a URL that Scimon will open in a web browser after processing the list file. This URL is typically used to provide additional information or resources related to the processed task or project.</p>
+<h3 id="opening-urls"><a class="header" href="#opening-urls">Opening URLs:</a></h3>
+<p>After Scimon completes processing the list file, it automatically opens the URL specified in the <code>open</code> variable in a web browser.</p>
+<h3 id="usage"><a class="header" href="#usage">Usage:</a></h3>
+<p>The <code>open</code> variable is useful for directing users to relevant websites, documentation, or resources associated with the tasks or projects being processed.</p>
+<h4 id="example-usage-5"><a class="header" href="#example-usage-5">Example Usage:</a></h4>
+<pre><code class="language-plaintext">open = "https://scibun.com"
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The <code>open</code> variable is assigned the URL <code>"https://scibun.com"</code>.</li>
+<li>After processing the list file, Scimon will open this URL in a web browser, allowing users to access the GitHub repository associated with the task or project.</li>
+</ul>
+<p>By utilizing the <code>open</code> variable, you can seamlessly provide users with additional information and resources to enhance their understanding and engagement with the processed tasks or projects.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="checksum-and-checksum-validate"><a class="header" href="#checksum-and-checksum-validate">Checksum and Checksum Validate</a></h1>
+<h2 id="checksum-variable"><a class="header" href="#checksum-variable">Checksum Variable</a></h2>
+<p>The <code>checksum</code> variable is used to specify the URL of a checksum file that contains cryptographic hash values for files in your project. This checksum file is typically in SHA-256 format and is used to verify the integrity of the downloaded files.</p>
+<h3 id="fetching-checksums"><a class="header" href="#fetching-checksums">Fetching Checksums:</a></h3>
+<p>When Scimon processes the list file, it fetches the checksum file from the URL specified in the <code>checksum</code> variable.</p>
+<h3 id="verifying-checksums"><a class="header" href="#verifying-checksums">Verifying Checksums:</a></h3>
+<p>After downloading each file specified in the list, Scimon computes the SHA-256 hash of the downloaded file and compares it against the corresponding hash value from the checksum file. If the hash values match, the file is considered valid and is kept. If there is a mismatch, Scimon takes the action specified by the <code>checksum.unmatch</code> variable.</p>
+<h3 id="checksumunmatch-behavior"><a class="header" href="#checksumunmatch-behavior"><code>checksum.unmatch</code> Behavior:</a></h3>
+<p>The <code>checksum.unmatch</code> variable determines what action Scimon should take if a checksum mismatch occurs for a downloaded file. It has the following options:</p>
+<ul>
+<li><strong><code>keep</code></strong>: Keep the downloaded file even if the checksum does not match.</li>
+<li><strong><code>remove</code></strong>: Remove the downloaded file if the checksum does not match.</li>
+</ul>
+<h4 id="example-usage-6"><a class="header" href="#example-usage-6">Example Usage:</a></h4>
+<pre><code class="language-plaintext">checksum = "https://gist.githubusercontent.com/kremilly/499d6d51d096c1813cea0eade8eb0bc4/raw/d7c5965aeaf005cf0b612e3468ab47c30480083b/scibun.sha256"
+checksum.unmatch = "keep"
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The <code>checksum</code> variable is assigned the URL of a SHA-256 checksum file.</li>
+<li>Scimon will fetch the checksums from the specified URL and use them to verify the integrity of downloaded files.</li>
+<li>If a checksum mismatch occurs, Scimon will keep the downloaded file (<code>checksum.unmatch = "keep"</code>).</li>
+</ul>
+<p>By using the <code>checksum</code> variable, you can ensure the integrity of your downloaded files and take appropriate actions in case of checksum mismatches.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="directives-and-comments"><a class="header" href="#directives-and-comments">Directives and Comments</a></h1>
+<h2 id="directives"><a class="header" href="#directives">Directives</a></h2>
+<p>In computing, directives are predefined sequences of commands or instructions that are executed when the directive is called. They are used to automate repetitive tasks and simplify complex processes, turning multiple instructions into a single command.</p>
+<h3 id="debug"><a class="header" href="#debug"><code>!debug</code></a></h3>
+<p>The <code>!debug</code> directive displays specific information to the user, making it invaluable when you need to relay details or debug information to the tool's user.</p>
+<h4 id="example-usage-7"><a class="header" href="#example-usage-7">Example Usage:</a></h4>
+<pre><code class="language-plaintext">This is a comment that is displayed with the debug !debug
+</code></pre>
+<p>When the above line is processed, it will display "This is a comment that is displayed with the debug" to the user.</p>
+<h3 id="ignore"><a class="header" href="#ignore"><code>!ignore</code></a></h3>
+<p>The <code>!ignore</code> directive allows you to specify certain URLs that you wish to bypass during the operation. When a URL is followed by <code>!ignore</code>, it will be skipped and not processed by the tool.</p>
+<h4 id="example-usage-8"><a class="header" href="#example-usage-8">Example Usage:</a></h4>
+<pre><code class="language-plaintext">https://example.com/file1.pdf !ignore
+https://example.com/file2.pdf
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li><code>https://example.com/file1.pdf</code> will be skipped because it is followed by <code>!ignore</code>.</li>
+<li><code>https://example.com/file2.pdf</code> will be processed normally.</li>
+</ul>
+<h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
+<p>The tool recognizes any non-blank lines without identifiable URLs as comments. By default, these lines are neither processed nor displayed to the user. Comments are useful for adding notes or explanations within your configuration files.</p>
+<h4 id="example-usage-9"><a class="header" href="#example-usage-9">Example Usage:</a></h4>
+<pre><code class="language-plaintext">This is a comment and will not be processed
+Another comment line
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>The lines starting with <code>#</code> are comments and will be ignored by the tool.</li>
+<li><code>https://example.com/file3.pdf</code> will be processed normally.</li>
+</ul>
+<p>By using directives and comments effectively, you can control and customize the behavior of Scimon to suit your specific needs, making your configuration files easier to read and manage.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="markdown-render"><a class="header" href="#markdown-render">Markdown render</a></h1>
+<p>PrimeDown is a markdown rendering engine that enhances HTML content generated by the default Rust crate by injecting JavaScript plugins.</p>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<p><strong>PrimeDown</strong> now supports:</p>
+<ul>
+<li>Headers (h1 to h6)</li>
+<li>Links</li>
+<li>Bold, Italic, Strikethrough</li>
+<li>Images</li>
+<li>Tables</li>
+<li>Blockquotes</li>
+<li>Task lists</li>
+<li>Unordered and Ordered Lists</li>
+<li>Inline and Block Code (with syntax highlighting)</li>
+<li>MathJax formulas</li>
+<li>Mermaid diagrams</li>
+<li>HTML tags</li>
+</ul>
+<h3 id="extra-features"><a class="header" href="#extra-features">Extra Features</a></h3>
+<ul>
+<li>QRCode</li>
+<li>Gist Embed</li>
+<li>DocsSources</li>
+<li>Citations (References)</li>
+</ul>
+<p>Learn more about how to use Extras features <a href="markdown-render.html#how-to-use-extras-features">here</a>.</p>
+<h3 id="file-formats-supported-by-docssources"><a class="header" href="#file-formats-supported-by-docssources">File Formats Supported by DocsSources:</a></h3>
+<ul>
+  <li>.pdf</li>
+  <li>.doc, .docx</li>
+  <li>.epub, .mobui</li>
+  <li>.rst, .yml, .yaml, .toml, .json</li>
+  <li>.7z, .zip, .rar, .tar, .tar.gz, .gz</li>
+  <li>.bin, .img</li>
+</ul>
+<h3 id="third-party-libraries-loaded-on-readme-file-rendered"><a class="header" href="#third-party-libraries-loaded-on-readme-file-rendered">Third-party Libraries Loaded on README File Rendered:</a></h3>
+<ul>
+  <li><a href="https://www.mathjax.org/">MathJax.js</a></li>
+  <li><a href="https://mermaid.js.org/">Mermaid.js</a></li>
+  <li><a href="https://prismjs.com/">Prism.js</a> (with support for some programming languages)</li>
+</ul>
+<p>Markdown flags alerts (!note, !important, !warning...) are not supported yet.</p>
+<h2 id="how-to-use-extras-features"><a class="header" href="#how-to-use-extras-features">How to Use Extras Features</a></h2>
+<h3 id="qrcode"><a class="header" href="#qrcode">QRCode</a></h3>
+<p>Generate a QR Code by using:</p>
+<pre><code class="language-markdown">[!extra qrcode data="https://www.example.com", size=300]
+</code></pre>
+<p>The <code>data</code> parameter should contain your link, and the <code>size</code> parameter determines the size of the image.</p>
+<h3 id="gist"><a class="header" href="#gist">Gist</a></h3>
+<p>Add a Gist embed with:</p>
+<pre><code class="language-markdown">[!extra gist data="https://gist.github.com/kremilly/62ffe4841571d13bdbf099fd24264431"]
+</code></pre>
+<p>The <code>data</code> parameter should contain the link to your Gist.</p>
+<h2 id="standard-directory-where-readmehtml-files-are-generated"><a class="header" href="#standard-directory-where-readmehtml-files-are-generated">Standard Directory where README.html Files are Generated</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>System</th><th>Location</th></tr></thead><tbody>
+<tr><td>Linux</td><td><code>home/&lt;YOUR_USERNAME&gt;/.config/scimon/readme</code></td></tr>
+<tr><td>MacOS</td><td><code>/Users/&lt;YOUR_USERNAME&gt;/Library/Application Support/scimon/readme</code></td></tr>
+<tr><td>Windows</td><td><code>C:\Users\&lt;YOUR_USERNAME&gt;\AppData\Roaming\scimon\readme</code></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="scrape"><a class="header" href="#scrape">Scrape</a></h1>
+<h2 id="scrape-option"><a class="header" href="#scrape-option">Scrape Option</a></h2>
+<p>The <code>--scrape</code> option in Scimon enables scraping functionality, allowing you to extract information or data from a specified URL.</p>
+<h3 id="usage-1"><a class="header" href="#usage-1">Usage:</a></h3>
+<p>To initiate a scraping operation on a specific URL, you use the <code>--url</code> flag followed by the URL you want to scrape, along with the <code>--scrape</code> flag.</p>
+<h4 id="example-command"><a class="header" href="#example-command">Example Command:</a></h4>
+<pre><code class="language-shell">scimon --url https://scibun.com --scrape
+</code></pre>
+<p>In this command:</p>
+<ul>
+<li><code>https://scibun.com</code> should be replaced with the URL you want to perform the scraping on.</li>
+</ul>
+<h3 id="functionality"><a class="header" href="#functionality">Functionality:</a></h3>
+<p>When you execute the command with the <code>--url</code> and <code>--scrape</code> flags, Scimon will visit the specified URL and extract relevant information based on predefined scraping rules or patterns.</p>
+<h3 id="result"><a class="header" href="#result">Result:</a></h3>
+<p>The result of the scraping operation depends on the specific implementation and configuration of Scimon. It could involve extracting text, images, links, or other structured data from the webpage.</p>
+<h3 id="additional-notes"><a class="header" href="#additional-notes">Additional Notes:</a></h3>
+<ul>
+<li>Scimon provides flexibility in configuring scraping rules and patterns to suit your specific requirements.</li>
+<li>Ensure that you have proper permissions or authorization to scrape the content of the specified URL to comply with legal and ethical guidelines.</li>
+</ul>
+<p>By utilizing the <code>--scrape</code> option in Scimon, you can automate the process of extracting valuable information from webpages, streamlining tasks such as data collection, content aggregation, and web monitoring.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="providers"><a class="header" href="#providers">Providers</a></h1>
+<h2 id="providers-compatible-with-scimon"><a class="header" href="#providers-compatible-with-scimon">Providers Compatible with Scimon</a></h2>
+<p>Scimon is compatible with various providers, enabling it to access and retrieve data from different sources. These providers include:</p>
+<ul>
+<li><a href="https://arxiv.org">Arxiv.org</a>: A popular repository for research papers in various fields of science.</li>
+<li><a href="https://github.com">GitHub</a>: A widely used platform for version control and collaboration on software projects.</li>
+<li><a href="https://www.nasa.gov">NASA</a>: The National Aeronautics and Space Administration, providing information and resources related to space exploration and aeronautics.</li>
+<li><a href="https://scielo.org">SciELO</a>: A digital library covering a wide range of scientific journals from Latin America, Spain, Portugal, and South Africa.</li>
+<li><a href="https://sci-hub.se">Sci-Hub</a> (Experimental): An online repository of academic articles and papers, often used to access paywalled content.</li>
+<li><a href="https://wikipedia.org">Wikipedia</a>: A free online encyclopedia covering a vast array of topics in multiple languages.</li>
+<li><a href="https://wikisource.org">Wikisource</a>: A Wikimedia project that hosts free-content textbooks, source texts, and other material.</li>
+</ul>
+<p>These providers offer diverse content and resources, ranging from research papers and academic articles to general knowledge and reference materials. Scimon leverages its compatibility with these providers to access and utilize information from various sources, enhancing its functionality and versatility for users.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="scimonyml-file"><a class="header" href="#scimonyml-file">Scimon.yml file</a></h1>
+<p>This configuration file is utilized to set up the tool. Please utilize this default version if any alterations you make result in issues.</p>
+<pre><code class="language-yaml">general:
+  default_text_editor: 'notepad' # String (default: 'notepad')
+
+ui:
+  show_header: true # Boolean (valid values: 'true' or 'false'; default: 'true')
+
+render_markdown:
+  output_path: '{app_path}' # String (default: '{app_path}')
+  overwrite: true # Boolean (valid values: 'true' or 'false'; default: 'true')
+  minify_html: true # Boolean (valid values: 'true' or 'false'; default: 'true')
+</code></pre>
+<p>Save this file at the following location:</p>
+<div class="table-wrapper"><table><thead><tr><th>System</th><th>Location</th></tr></thead><tbody>
+<tr><td>Linux</td><td><code>home/&lt;YOUR_USERNAME&gt;/.config/scimon/scimon.yml</code></td></tr>
+<tr><td>MacOS</td><td><code>/Users/&lt;YOUR_USERNAME&gt;/Library/Application Support/scimon/scimon.yml</code></td></tr>
+<tr><td>Windows</td><td><code>C:\Users\&lt;YOUR_USERNAME&gt;\AppData\Roaming\scimon\scimon.yml</code></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="env-file"><a class="header" href="#env-file">.env file</a></h1>
+<h2 id="open-env-file"><a class="header" href="#open-env-file">Open .env file</a></h2>
+<p><strong>To open .env file, simply use run:</strong></p>
+<pre><code class="language-shell">scimon --options open-env
+</code></pre>
+<h3 id="env-file-locations-in-operations-systems"><a class="header" href="#env-file-locations-in-operations-systems">.env file locations in Operations Systems:</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>System</th><th>Location</th></tr></thead><tbody>
+<tr><td>Linux</td><td><code>home/&lt;YOUR_USERNAME&gt;/.config/scimon/.env</code></td></tr>
+<tr><td>MacOS</td><td><code>/Users/&lt;YOUR_USERNAME&gt;/Library/Application Support/scimon/.env</code></td></tr>
+<tr><td>Windows</td><td><code>C:\Users\&lt;YOUR_USERNAME&gt;\AppData\Roaming\scimon\.env</code></td></tr>
+</tbody></table>
+</div>
+<h3 id="readme-files-locations-in-operations-systems"><a class="header" href="#readme-files-locations-in-operations-systems">README file's locations in Operations Systems:</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>System</th><th>Location</th></tr></thead><tbody>
+<tr><td>Linux</td><td><code>home/&lt;YOUR_USERNAME&gt;/.config/scimon/readme</code></td></tr>
+<tr><td>MacOS</td><td><code>/Users/&lt;YOUR_USERNAME&gt;/Library/Application Support/scimon/readme</code></td></tr>
+<tr><td>Windows</td><td><code>C:\Users\&lt;YOUR_USERNAME&gt;\AppData\Roaming\scimon\readme</code></td></tr>
+</tbody></table>
+</div>
+<h3 id="environments-of-system"><a class="header" href="#environments-of-system">Environments of system</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
+<tr><td>SCIMON_API_KEY</td><td>Your API key for access Ravenib (<em><code>Under in development</code></em>)</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="external-resources-usage"><a class="header" href="#external-resources-usage">External Resources Usage</a></h1>
+<p>This library accesses the following external resources:</p>
+<p><strong>Scibun:</strong></p>
+<ul>
+<li><a href="https://addons.scibun.com">addons.scibun.com</a></li>
+<li><a href="https://template.scibun.com">template.scibun.com</a></li>
+</ul>
+<p>This API provides additional functionality or data support for the library.</p>
+<p><strong>Wikipedia and Wikisource:</strong></p>
+<ul>
+<li><a href="https://wikipedia.org">wikipedia.org</a></li>
+<li><a href="https://wikisource.org">wikisource.org</a></li>
+</ul>
+<p>This domain provides download of wiki pages and documents.</p>
+<p><strong>GitHub:</strong></p>
+<ul>
+<li><a href="https://raw.githubusercontent.com">raw.githubusercontent.com</a></li>
+</ul>
+<p>This domain is necessary to download the configuration files.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -18,14 +18,14 @@ scimon --options open-env
 
 ### README file's locations in Operations Systems:
 
-| System  | Location                                                           |
-| ------- | ------------------------------------------------------------------ |
+| System  | Location                                                             |
+| ------- | -------------------------------------------------------------------- |
 | Linux   | `home/<YOUR_USERNAME>/.config/scimon/readme`                       |
 | MacOS   | `/Users/<YOUR_USERNAME>/Library/Application Support/scimon/readme` |
 | Windows | `C:\Users\<YOUR_USERNAME>\AppData\Roaming\scimon\readme`           |
 
 ### Environments of system
 
-| Name           | Description                                                    |
-| -------------- | -------------------------------------------------------------- |
-| RAVENLIB_API_KEY | Your API key for access Ravenib (*`Under in development`*) |
+| Name           | Description                                                     |
+| -------------- | --------------------------------------------------------------- |
+| SCIMON_API_KEY | Your API key for access Ravenib (*`Under in development`*) |
