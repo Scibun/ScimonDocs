@@ -1,0 +1,6 @@
+[book]
+authors = ["Kremilly"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Scimon: Docs"
