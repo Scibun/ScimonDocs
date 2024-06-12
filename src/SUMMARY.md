@@ -5,6 +5,7 @@
 - [Flags](./flags.md)
 - [Downloads Block](./download-block.md)
 - [Readme Block](./readme-block.md)
+- [Commands Block](./commands-block.md)
 - [Open links](./open-links.md)
 - [Checksum and Checksum Validate](./checksum.md)
 - [Directives and Comments](./directives.md)

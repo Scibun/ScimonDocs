@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">6.</strong> Open links</a></li><li class="chapter-item expanded "><a href="checksum.html"><strong aria-hidden="true">7.</strong> Checksum and Checksum Validate</a></li><li class="chapter-item expanded "><a href="directives.html"><strong aria-hidden="true">8.</strong> Directives and Comments</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">9.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">10.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">11.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">12.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">13.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">14.</strong> External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">7.</strong> Open links</a></li><li class="chapter-item expanded "><a href="checksum.html"><strong aria-hidden="true">8.</strong> Checksum and Checksum Validate</a></li><li class="chapter-item expanded "><a href="directives.html"><strong aria-hidden="true">9.</strong> Directives and Comments</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">10.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">11.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">12.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">13.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">14.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">15.</strong> External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -448,12 +448,37 @@ cargo --version
 <li>During the processing of the list file, Scimon will render this Markdown content within the context of the list file.</li>
 </ul>
 <p>This provides a convenient way to include documentation, code examples, images, and other elements directly within the list file, keeping everything in one place and making it easy to maintain and share the content.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="commands-block"><a class="header" href="#commands-block">Commands Block</a></h1>
+<blockquote>
+<p>This feature is <code>Experimental</code></p>
+</blockquote>
+<h2 id="command-usage-documentation"><a class="header" href="#command-usage-documentation">Command Usage Documentation</a></h2>
+<h3 id="purpose"><a class="header" href="#purpose">Purpose</a></h3>
+<p>The provided command <code>index.py</code> is used to perform a specific action or operation. In this case, it appears to be referencing a Python script named <code>index.py</code>.</p>
+<h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
+<p>To use this command, follow the syntax:</p>
+<pre><code>commands {
+    index.py
+}
+</code></pre>
+<p>Replace <code>index.py</code> with the actual name of the Python script you want to execute.</p>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<p>Suppose you have a Python script named <code>my_script.py</code> and you want to execute it using this command. Your configuration file would look like this:</p>
+<pre><code>commands {
+    my_script.py
+}
+</code></pre>
+<h3 id="notes"><a class="header" href="#notes">Notes</a></h3>
+<ul>
+<li>Ensure that the Python script file (<code>index.py</code> in this case) exists in the current directory or provide the full path to the script.</li>
+<li>Make sure you have Python installed on your system and it is accessible from the command line.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="open-links"><a class="header" href="#open-links">Open links</a></h1>
 <h2 id="open-variable"><a class="header" href="#open-variable">Open Variable</a></h2>
 <p>The <code>open</code> variable specifies a URL that Scimon will open in a web browser after processing the list file. This URL is typically used to provide additional information or resources related to the processed task or project.</p>
 <h3 id="opening-urls"><a class="header" href="#opening-urls">Opening URLs:</a></h3>
 <p>After Scimon completes processing the list file, it automatically opens the URL specified in the <code>open</code> variable in a web browser.</p>
-<h3 id="usage"><a class="header" href="#usage">Usage:</a></h3>
+<h3 id="usage-1"><a class="header" href="#usage-1">Usage:</a></h3>
 <p>The <code>open</code> variable is useful for directing users to relevant websites, documentation, or resources associated with the tasks or projects being processed.</p>
 <h4 id="example-usage-5"><a class="header" href="#example-usage-5">Example Usage:</a></h4>
 <pre><code class="language-plaintext">open = "https://scibun.com"
@@ -582,7 +607,7 @@ Another comment line
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="scrape"><a class="header" href="#scrape">Scrape</a></h1>
 <h2 id="scrape-option"><a class="header" href="#scrape-option">Scrape Option</a></h2>
 <p>The <code>--scrape</code> option in Scimon enables scraping functionality, allowing you to extract information or data from a specified URL.</p>
-<h3 id="usage-1"><a class="header" href="#usage-1">Usage:</a></h3>
+<h3 id="usage-2"><a class="header" href="#usage-2">Usage:</a></h3>
 <p>To initiate a scraping operation on a specific URL, you use the <code>--url</code> flag followed by the URL you want to scrape, along with the <code>--scrape</code> flag.</p>
 <h4 id="example-command"><a class="header" href="#example-command">Example Command:</a></h4>
 <pre><code class="language-shell">scimon --url https://scibun.com --scrape
