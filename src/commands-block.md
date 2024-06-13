@@ -30,7 +30,16 @@ commands {
 }
 ```
 
+### Scripts files locations in Operations Systems:
+
+| System  | Location                                                           |
+| ------- | ------------------------------------------------------------------ |
+| Linux   | `home/<YOUR_USERNAME>/.config/scimon/scripts/`                       |
+| MacOS   | `/Users/<YOUR_USERNAME>/Library/Application Support/scimon/scripts/` |
+| Windows | `C:\Users\<YOUR_USERNAME>\AppData\Roaming\scimon\scripts\`           |
+
 ### Notes
 
 - Ensure that the Python script file (`index.py` in this case) exists in the current directory or provide the full path to the script.
 - Make sure you have Python installed on your system and it is accessible from the command line.
+- Only Python and JavaScript are supported
