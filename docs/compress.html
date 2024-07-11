@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Checksum and Checksum Validate - Scimon: Docs</title>
+        <title>Compress files - Scimon: Docs</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="compress.html"><strong aria-hidden="true">7.</strong> Compress files</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">8.</strong> Open links</a></li><li class="chapter-item expanded "><a href="checksum.html" class="active"><strong aria-hidden="true">9.</strong> Checksum and Checksum Validate</a></li><li class="chapter-item expanded "><a href="directives.html"><strong aria-hidden="true">10.</strong> Directives and Comments</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">11.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">12.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">13.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">14.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">15.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">16.</strong> External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="compress.html" class="active"><strong aria-hidden="true">7.</strong> Compress files</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">8.</strong> Open links</a></li><li class="chapter-item expanded "><a href="checksum.html"><strong aria-hidden="true">9.</strong> Checksum and Checksum Validate</a></li><li class="chapter-item expanded "><a href="directives.html"><strong aria-hidden="true">10.</strong> Directives and Comments</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">11.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">12.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">13.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">14.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">15.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">16.</strong> External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,40 +173,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="checksum-and-checksum-validate"><a class="header" href="#checksum-and-checksum-validate">Checksum and Checksum Validate</a></h1>
-<h2 id="checksum-variable"><a class="header" href="#checksum-variable">Checksum Variable</a></h2>
-<p>The <code>checksum</code> variable is used to specify the URL of a checksum file that contains cryptographic hash values for files in your project. This checksum file is typically in SHA-256 format and is used to verify the integrity of the downloaded files.</p>
-<h3 id="fetching-checksums"><a class="header" href="#fetching-checksums">Fetching Checksums:</a></h3>
-<p>When Scimon processes the list file, it fetches the checksum file from the URL specified in the <code>checksum</code> variable.</p>
-<h3 id="verifying-checksums"><a class="header" href="#verifying-checksums">Verifying Checksums:</a></h3>
-<p>After downloading each file specified in the list, Scimon computes the SHA-256 hash of the downloaded file and compares it against the corresponding hash value from the checksum file. If the hash values match, the file is considered valid and is kept. If there is a mismatch, Scimon takes the action specified by the <code>checksum.unmatch</code> variable.</p>
-<h3 id="checksumunmatch-behavior"><a class="header" href="#checksumunmatch-behavior"><code>checksum.unmatch</code> Behavior:</a></h3>
-<p>The <code>checksum.unmatch</code> variable determines what action Scimon should take if a checksum mismatch occurs for a downloaded file. It has the following options:</p>
-<ul>
-<li><strong><code>keep</code></strong>: Keep the downloaded file even if the checksum does not match.</li>
-<li><strong><code>remove</code></strong>: Remove the downloaded file if the checksum does not match.</li>
-</ul>
-<h4 id="example-usage"><a class="header" href="#example-usage">Example Usage:</a></h4>
-<pre><code class="language-plaintext">checksum = "https://gist.githubusercontent.com/kremilly/499d6d51d096c1813cea0eade8eb0bc4/raw/d7c5965aeaf005cf0b612e3468ab47c30480083b/scibun.sha256"
-checksum.unmatch = "keep"
+                        <h1 id="compress-files"><a class="header" href="#compress-files">Compress files</a></h1>
+<p>To compress a folder, you can use the variable <code>compress</code> and assign the compressed file name as its value. The folder will be compressed in the root directory of the project.</p>
+<pre><code class="language-monset">compress = "downloads.zip"
 </code></pre>
-<p>In this example:</p>
-<ul>
-<li>The <code>checksum</code> variable is assigned the URL of a SHA-256 checksum file.</li>
-<li>Scimon will fetch the checksums from the specified URL and use them to verify the integrity of downloaded files.</li>
-<li>If a checksum mismatch occurs, Scimon will keep the downloaded file (<code>checksum.unmatch = "keep"</code>).</li>
-</ul>
-<p>By using the <code>checksum</code> variable, you can ensure the integrity of your downloaded files and take appropriate actions in case of checksum mismatches.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="open-links.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="commands-block.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="directives.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="open-links.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -216,11 +196,11 @@ checksum.unmatch = "keep"
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="open-links.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="commands-block.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="directives.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="open-links.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
