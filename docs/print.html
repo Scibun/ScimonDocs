@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="compress.html"><strong aria-hidden="true">7.</strong> Compress files</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">8.</strong> Open links</a></li><li class="chapter-item expanded "><a href="checksum.html"><strong aria-hidden="true">9.</strong> Checksum and Checksum Validate</a></li><li class="chapter-item expanded "><a href="directives.html"><strong aria-hidden="true">10.</strong> Directives and Comments</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">11.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">12.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">13.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">14.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">15.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">16.</strong> External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">7.</strong> Open links</a></li><li class="chapter-item expanded "><a href="directives.html"><strong aria-hidden="true">8.</strong> Directives and Comments</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">9.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">10.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">11.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">12.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">13.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">14.</strong> External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -310,16 +310,6 @@ cargo --version
 <p><strong>Usage</strong>:</p>
 <pre><code class="language-shell">scimon --no-ignore
 </code></pre>
-<h3 id="--no-checksum"><a class="header" href="#--no-checksum"><code>--no-checksum</code></a></h3>
-<p><strong>Description</strong>: Disables the generation of checksums for downloaded files.</p>
-<p><strong>Usage</strong>:</p>
-<pre><code class="language-shell">scimon --no-checksum
-</code></pre>
-<h3 id="--no-checksum-validate"><a class="header" href="#--no-checksum-validate"><code>--no-checksum-validate</code></a></h3>
-<p><strong>Description</strong>: Disables the validation of checksums for downloaded files. This can be used if you want to skip checksum verification.</p>
-<p><strong>Usage</strong>:</p>
-<pre><code class="language-shell">scimon --no-checksum-validate
-</code></pre>
 <h3 id="--no-comments"><a class="header" href="#--no-comments"><code>--no-comments</code></a></h3>
 <p><strong>Description</strong>: Disables the processing of comments and the <code>!debug</code> directive in the download list. This can be useful for skipping unnecessary lines during processing.</p>
 <p><strong>Usage</strong>:</p>
@@ -481,10 +471,6 @@ cargo --version
 <li>Make sure you have Python installed on your system and it is accessible from the command line.</li>
 <li>Only Python and JavaScript are supported.</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="compress-files"><a class="header" href="#compress-files">Compress files</a></h1>
-<p>To compress a folder, you can use the variable <code>compress</code> and assign the compressed file name as its value. The folder will be compressed in the root directory of the project.</p>
-<pre><code class="language-monset">compress = "downloads.zip"
-</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="open-links"><a class="header" href="#open-links">Open links</a></h1>
 <h2 id="open-variable"><a class="header" href="#open-variable">Open Variable</a></h2>
 <p>The <code>open</code> variable specifies a URL that Scimon will open in a web browser after processing the list file. This URL is typically used to provide additional information or resources related to the processed task or project.</p>
@@ -501,42 +487,18 @@ cargo --version
 <li>After processing the list file, Scimon will open this URL in a web browser, allowing users to access the GitHub repository associated with the task or project.</li>
 </ul>
 <p>By utilizing the <code>open</code> variable, you can seamlessly provide users with additional information and resources to enhance their understanding and engagement with the processed tasks or projects.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="checksum-and-checksum-validate"><a class="header" href="#checksum-and-checksum-validate">Checksum and Checksum Validate</a></h1>
-<h2 id="checksum-variable"><a class="header" href="#checksum-variable">Checksum Variable</a></h2>
-<p>The <code>checksum</code> variable is used to specify the URL of a checksum file that contains cryptographic hash values for files in your project. This checksum file is typically in SHA-256 format and is used to verify the integrity of the downloaded files.</p>
-<h3 id="fetching-checksums"><a class="header" href="#fetching-checksums">Fetching Checksums:</a></h3>
-<p>When Scimon processes the list file, it fetches the checksum file from the URL specified in the <code>checksum</code> variable.</p>
-<h3 id="verifying-checksums"><a class="header" href="#verifying-checksums">Verifying Checksums:</a></h3>
-<p>After downloading each file specified in the list, Scimon computes the SHA-256 hash of the downloaded file and compares it against the corresponding hash value from the checksum file. If the hash values match, the file is considered valid and is kept. If there is a mismatch, Scimon takes the action specified by the <code>checksum.unmatch</code> variable.</p>
-<h3 id="checksumunmatch-behavior"><a class="header" href="#checksumunmatch-behavior"><code>checksum.unmatch</code> Behavior:</a></h3>
-<p>The <code>checksum.unmatch</code> variable determines what action Scimon should take if a checksum mismatch occurs for a downloaded file. It has the following options:</p>
-<ul>
-<li><strong><code>keep</code></strong>: Keep the downloaded file even if the checksum does not match.</li>
-<li><strong><code>remove</code></strong>: Remove the downloaded file if the checksum does not match.</li>
-</ul>
-<h4 id="example-usage-6"><a class="header" href="#example-usage-6">Example Usage:</a></h4>
-<pre><code class="language-plaintext">checksum = "https://gist.githubusercontent.com/kremilly/499d6d51d096c1813cea0eade8eb0bc4/raw/d7c5965aeaf005cf0b612e3468ab47c30480083b/scibun.sha256"
-checksum.unmatch = "keep"
-</code></pre>
-<p>In this example:</p>
-<ul>
-<li>The <code>checksum</code> variable is assigned the URL of a SHA-256 checksum file.</li>
-<li>Scimon will fetch the checksums from the specified URL and use them to verify the integrity of downloaded files.</li>
-<li>If a checksum mismatch occurs, Scimon will keep the downloaded file (<code>checksum.unmatch = "keep"</code>).</li>
-</ul>
-<p>By using the <code>checksum</code> variable, you can ensure the integrity of your downloaded files and take appropriate actions in case of checksum mismatches.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="directives-and-comments"><a class="header" href="#directives-and-comments">Directives and Comments</a></h1>
 <h2 id="directives"><a class="header" href="#directives">Directives</a></h2>
 <p>In computing, directives are predefined sequences of commands or instructions that are executed when the directive is called. They are used to automate repetitive tasks and simplify complex processes, turning multiple instructions into a single command.</p>
 <h3 id="debug"><a class="header" href="#debug"><code>!debug</code></a></h3>
 <p>The <code>!debug</code> directive displays specific information to the user, making it invaluable when you need to relay details or debug information to the tool's user.</p>
-<h4 id="example-usage-7"><a class="header" href="#example-usage-7">Example Usage:</a></h4>
+<h4 id="example-usage-6"><a class="header" href="#example-usage-6">Example Usage:</a></h4>
 <pre><code class="language-plaintext">This is a comment that is displayed with the debug !debug
 </code></pre>
 <p>When the above line is processed, it will display "This is a comment that is displayed with the debug" to the user.</p>
 <h3 id="ignore"><a class="header" href="#ignore"><code>!ignore</code></a></h3>
 <p>The <code>!ignore</code> directive allows you to specify certain URLs that you wish to bypass during the operation. When a URL is followed by <code>!ignore</code>, it will be skipped and not processed by the tool.</p>
-<h4 id="example-usage-8"><a class="header" href="#example-usage-8">Example Usage:</a></h4>
+<h4 id="example-usage-7"><a class="header" href="#example-usage-7">Example Usage:</a></h4>
 <pre><code class="language-plaintext">https://example.com/file1.pdf !ignore
 https://example.com/file2.pdf
 </code></pre>
@@ -547,7 +509,7 @@ https://example.com/file2.pdf
 </ul>
 <h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
 <p>The tool recognizes any non-blank lines without identifiable URLs as comments. By default, these lines are neither processed nor displayed to the user. Comments are useful for adding notes or explanations within your configuration files.</p>
-<h4 id="example-usage-9"><a class="header" href="#example-usage-9">Example Usage:</a></h4>
+<h4 id="example-usage-8"><a class="header" href="#example-usage-8">Example Usage:</a></h4>
 <pre><code class="language-plaintext">This is a comment and will not be processed
 Another comment line
 </code></pre>

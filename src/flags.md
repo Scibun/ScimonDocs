@@ -42,26 +42,6 @@ scimon --run tasks.toml
 scimon --no-ignore
 ```
 
-### `--no-checksum`
-
-**Description**: Disables the generation of checksums for downloaded files.
-
-**Usage**:
-
-```shell
-scimon --no-checksum
-```
-
-### `--no-checksum-validate`
-
-**Description**: Disables the validation of checksums for downloaded files. This can be used if you want to skip checksum verification.
-
-**Usage**:
-
-```shell
-scimon --no-checksum-validate
-```
-
 ### `--no-comments`
 
 **Description**: Disables the processing of comments and the `!debug` directive in the download list. This can be useful for skipping unnecessary lines during processing.
