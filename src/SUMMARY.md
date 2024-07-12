@@ -6,6 +6,7 @@
 - [Downloads Block](./download-block.md)
 - [Readme Block](./readme-block.md)
 - [Commands Block](./commands-block.md)
+- [Compress folder](./compress.md)
 - [Open links](./open-links.md)
 - [Markdown render](./markdown-render.md)
 - [Scrape](./scrape.md)
