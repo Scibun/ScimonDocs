@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">7.</strong> Open links</a></li><li class="chapter-item expanded "><a href="directives.html"><strong aria-hidden="true">8.</strong> Directives and Comments</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">9.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">10.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">11.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">12.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">13.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">14.</strong> External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">7.</strong> Open links</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">8.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">9.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">10.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">11.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">12.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">13.</strong> External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -310,11 +310,6 @@ cargo --version
 <p><strong>Usage</strong>:</p>
 <pre><code class="language-shell">scimon --no-ignore
 </code></pre>
-<h3 id="--no-comments"><a class="header" href="#--no-comments"><code>--no-comments</code></a></h3>
-<p><strong>Description</strong>: Disables the processing of comments and the <code>!debug</code> directive in the download list. This can be useful for skipping unnecessary lines during processing.</p>
-<p><strong>Usage</strong>:</p>
-<pre><code class="language-shell">scimon --no-comments
-</code></pre>
 <h3 id="--no-open_link"><a class="header" href="#--no-open_link"><code>--no-open_link</code></a></h3>
 <p><strong>Description</strong>: Disables the processing of the <code>!open_link</code> directive. This is useful if you do not want <code>scimon</code> to handle external links specified in the list.</p>
 <p><strong>Usage</strong>:</p>
@@ -487,38 +482,6 @@ cargo --version
 <li>After processing the list file, Scimon will open this URL in a web browser, allowing users to access the GitHub repository associated with the task or project.</li>
 </ul>
 <p>By utilizing the <code>open</code> variable, you can seamlessly provide users with additional information and resources to enhance their understanding and engagement with the processed tasks or projects.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="directives-and-comments"><a class="header" href="#directives-and-comments">Directives and Comments</a></h1>
-<h2 id="directives"><a class="header" href="#directives">Directives</a></h2>
-<p>In computing, directives are predefined sequences of commands or instructions that are executed when the directive is called. They are used to automate repetitive tasks and simplify complex processes, turning multiple instructions into a single command.</p>
-<h3 id="debug"><a class="header" href="#debug"><code>!debug</code></a></h3>
-<p>The <code>!debug</code> directive displays specific information to the user, making it invaluable when you need to relay details or debug information to the tool's user.</p>
-<h4 id="example-usage-6"><a class="header" href="#example-usage-6">Example Usage:</a></h4>
-<pre><code class="language-plaintext">This is a comment that is displayed with the debug !debug
-</code></pre>
-<p>When the above line is processed, it will display "This is a comment that is displayed with the debug" to the user.</p>
-<h3 id="ignore"><a class="header" href="#ignore"><code>!ignore</code></a></h3>
-<p>The <code>!ignore</code> directive allows you to specify certain URLs that you wish to bypass during the operation. When a URL is followed by <code>!ignore</code>, it will be skipped and not processed by the tool.</p>
-<h4 id="example-usage-7"><a class="header" href="#example-usage-7">Example Usage:</a></h4>
-<pre><code class="language-plaintext">https://example.com/file1.pdf !ignore
-https://example.com/file2.pdf
-</code></pre>
-<p>In this example:</p>
-<ul>
-<li><code>https://example.com/file1.pdf</code> will be skipped because it is followed by <code>!ignore</code>.</li>
-<li><code>https://example.com/file2.pdf</code> will be processed normally.</li>
-</ul>
-<h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
-<p>The tool recognizes any non-blank lines without identifiable URLs as comments. By default, these lines are neither processed nor displayed to the user. Comments are useful for adding notes or explanations within your configuration files.</p>
-<h4 id="example-usage-8"><a class="header" href="#example-usage-8">Example Usage:</a></h4>
-<pre><code class="language-plaintext">This is a comment and will not be processed
-Another comment line
-</code></pre>
-<p>In this example:</p>
-<ul>
-<li>The lines starting with <code>#</code> are comments and will be ignored by the tool.</li>
-<li><code>https://example.com/file3.pdf</code> will be processed normally.</li>
-</ul>
-<p>By using directives and comments effectively, you can control and customize the behavior of Scimon to suit your specific needs, making your configuration files easier to read and manage.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="markdown-render"><a class="header" href="#markdown-render">Markdown render</a></h1>
 <p>PrimeDown is a markdown rendering engine that enhances HTML content generated by the default Rust crate by injecting JavaScript plugins.</p>
 <h2 id="features"><a class="header" href="#features">Features</a></h2>

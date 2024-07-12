@@ -7,7 +7,6 @@
 - [Readme Block](./readme-block.md)
 - [Commands Block](./commands-block.md)
 - [Open links](./open-links.md)
-- [Directives and Comments](./directives.md)
 - [Markdown render](./markdown-render.md)
 - [Scrape](./scrape.md)
 - [Providers](./providers.md)

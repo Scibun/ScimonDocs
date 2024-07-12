@@ -42,16 +42,6 @@ scimon --run tasks.toml
 scimon --no-ignore
 ```
 
-### `--no-comments`
-
-**Description**: Disables the processing of comments and the `!debug` directive in the download list. This can be useful for skipping unnecessary lines during processing.
-
-**Usage**:
-
-```shell
-scimon --no-comments
-```
-
 ### `--no-open_link`
 
 **Description**: Disables the processing of the `!open_link` directive. This is useful if you do not want `scimon` to handle external links specified in the list.
