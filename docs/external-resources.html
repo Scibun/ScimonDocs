@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>How to build - Scimon: Docs</title>
+        <title>External Resources Usage - Scimon: Docs</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html" class="active"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="compress.html"><strong aria-hidden="true">7.</strong> Compress folder</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">8.</strong> Open links</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">9.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">10.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="style.html"><strong aria-hidden="true">11.</strong> Style</a></li><li class="chapter-item expanded "><a href="prints.html"><strong aria-hidden="true">12.</strong> Print</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">13.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">14.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">15.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">16.</strong> External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="compress.html"><strong aria-hidden="true">7.</strong> Compress folder</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">8.</strong> Open links</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">9.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">10.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="style.html"><strong aria-hidden="true">11.</strong> Style</a></li><li class="chapter-item expanded "><a href="prints.html"><strong aria-hidden="true">12.</strong> Print</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">13.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">14.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">15.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html" class="active"><strong aria-hidden="true">16.</strong> External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,95 +173,34 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="how-to-build"><a class="header" href="#how-to-build">How to Build</a></h1>
-<h3 id="1-clone-the-repository"><a class="header" href="#1-clone-the-repository">1. Clone the Repository</a></h3>
-<p>If you don't already have the project on your local machine, you need to clone the repository from Git. Open a terminal and run:</p>
-<pre><code class="language-sh">git clone https://github.com/Scibun/Scimon.git
-</code></pre>
-<h3 id="2-setup-your-environment"><a class="header" href="#2-setup-your-environment">2. Setup Your Environment</a></h3>
-<p>Ensure that Rust and Cargo are installed and added to your system's PATH. You can check this by running:</p>
-<pre><code class="language-sh">rustc --version
-cargo --version
-</code></pre>
-<p>If Rust and Cargo are properly installed, these commands should return the version numbers.</p>
-<h3 id="3-navigate-to-your-project-directory"><a class="header" href="#3-navigate-to-your-project-directory">3. Navigate to Your Project Directory</a></h3>
-<p>Open a terminal and navigate to the root directory of your Rust project. For example:</p>
-<pre><code class="language-sh">cd Scimon
-</code></pre>
-<p>If you just cloned the repository, navigate to the newly created directory:</p>
-<pre><code class="language-sh">cd Scimon
-</code></pre>
-<h3 id="4-build-the-project"><a class="header" href="#4-build-the-project">4. Build the Project</a></h3>
-<p>To build the project, simply run:</p>
-<pre><code class="language-sh">cargo build
-</code></pre>
-<p>This command compiles your project and places the output binaries in the <code>target/debug</code> directory. You should see output similar to:</p>
-<pre><code>Compiling scimon v0.1.0 (/path/to/your/project)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.34s
-</code></pre>
-<h3 id="5-run-the-project"><a class="header" href="#5-run-the-project">5. Run the Project</a></h3>
-<p>To run the project after building it, use:</p>
-<pre><code class="language-sh">cargo run
-</code></pre>
-<p>This command builds and runs the project in one step.</p>
-<h3 id="6-building-for-release"><a class="header" href="#6-building-for-release">6. Building for Release</a></h3>
-<p>If you want to build an optimized release version of your project, run:</p>
-<pre><code class="language-sh">cargo build --release
-</code></pre>
-<p>This command compiles your project with optimizations and places the output binaries in the <code>target/release</code> directory. The output will be similar to:</p>
-<pre><code>Compiling scimon v0.1.0 (/path/to/your/project)
-    Finished release [optimized] target(s) in 2m 13s
-</code></pre>
-<h3 id="additional-commands"><a class="header" href="#additional-commands">Additional Commands</a></h3>
+                        <h1 id="external-resources-usage"><a class="header" href="#external-resources-usage">External Resources Usage</a></h1>
+<p>This library accesses the following external resources:</p>
+<p><strong>Scibun:</strong></p>
 <ul>
-<li><strong>Clean the Project</strong>: To remove the <code>target</code> directory and clean the project, run:
-<pre><code class="language-sh">cargo clean
-</code></pre>
-</li>
-<li><strong>Run Tests</strong>: To run tests defined in your project, use:
-<pre><code class="language-sh">cargo test
-</code></pre>
-</li>
+<li><a href="https://addons.scibun.com">addons.scibun.com</a></li>
+<li><a href="https://template.scibun.com">template.scibun.com</a></li>
 </ul>
-<h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
-<ol>
-<li>Clone the repository:
-<pre><code class="language-sh">git clone https://github.com/Scibun/Scimon.git
-cd repository
-</code></pre>
-</li>
-<li>Setup your environment:
-<pre><code class="language-sh">rustc --version
-cargo --version
-</code></pre>
-</li>
-<li>Navigate to your project directory (if not already there):
-<pre><code class="language-sh">cd Scimon
-</code></pre>
-</li>
-<li>Build the project:
-<pre><code class="language-sh">cargo build
-</code></pre>
-</li>
-<li>Run the project:
-<pre><code class="language-sh">cargo run
-</code></pre>
-</li>
-<li>For a release build:
-<pre><code class="language-sh">cargo build --release
-</code></pre>
-</li>
-</ol>
-<p>By following these steps, you can successfully clone, build, and run your Scimon.</p>
+<p>This API provides additional functionality or data support for the library.</p>
+<p><strong>Wikipedia and Wikisource:</strong></p>
+<ul>
+<li><a href="https://wikipedia.org">wikipedia.org</a></li>
+<li><a href="https://wikisource.org">wikisource.org</a></li>
+</ul>
+<p>This domain provides download of wiki pages and documents.</p>
+<p><strong>GitHub:</strong></p>
+<ul>
+<li><a href="https://raw.githubusercontent.com">raw.githubusercontent.com</a></li>
+</ul>
+<p>This domain is necessary to download the configuration files.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-
-                            <a rel="next prefetch" href="basic-usage.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="env-file.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+
 
                         <div style="clear: both"></div>
                     </nav>
@@ -269,10 +208,10 @@ cargo --version
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-
-                    <a rel="next prefetch" href="basic-usage.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="env-file.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+
             </nav>
 
         </div>
