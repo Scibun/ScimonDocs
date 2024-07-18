@@ -11,6 +11,7 @@
 - [Markdown render](./markdown-render.md)
 - [Scrape](./scrape.md)
 - [Style](./style.md)
+- [Print](./print.md)
 - [Providers](./providers.md)
 - [Scimon.yml file](./scimon.yml-file.md)
 - [.env file](./env-file.md)
