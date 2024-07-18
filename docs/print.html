@@ -255,17 +255,12 @@ cargo --version
 </ol>
 <p>By following these steps, you can successfully clone, build, and run your Scimon.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="basic-usage"><a class="header" href="#basic-usage">Basic Usage</a></h1>
-<h2 id="download-via-lists"><a class="header" href="#download-via-lists">Download via Lists</a></h2>
 <p>You can download files using a local or remote list with <code>scimon</code>. Here are the instructions for both methods:</p>
-<h3 id="downloading-files-with-a-local-list"><a class="header" href="#downloading-files-with-a-local-list">Downloading Files with a Local List</a></h3>
+<h3 id="downloading-files"><a class="header" href="#downloading-files">Downloading Files</a></h3>
 <p>To download files specified in a local list, use the following command:</p>
 <pre><code class="language-shell">scimon -r scimon.mon
 </code></pre>
-<h3 id="downloading-files-with-a-remote-list"><a class="header" href="#downloading-files-with-a-remote-list">Downloading Files with a Remote List</a></h3>
-<p>To download files specified in a remote list, use the following command:</p>
-<pre><code class="language-shell">scimon -r https://raw.githubusercontent.com/Ravenlib/Paimon/main/scimon.mon
-</code></pre>
-<h2 id="useful-flags-for-download-list"><a class="header" href="#useful-flags-for-download-list">Useful Flags for Download List</a></h2>
+<h3 id="useful-flags-for-download-list"><a class="header" href="#useful-flags-for-download-list">Useful Flags for Download List</a></h3>
 <p>There are several flags available to customize the download process. Here are some commonly used ones:</p>
 <h3 id="download-without-skipping-any-files"><a class="header" href="#download-without-skipping-any-files">Download Without Skipping Any Files</a></h3>
 <p>Use the <code>--no-ignore</code> flag to download all files without skipping any:</p>
@@ -278,14 +273,6 @@ cargo --version
 <h3 id="skip-readme-file-rendering"><a class="header" href="#skip-readme-file-rendering">Skip README File Rendering</a></h3>
 <p>Use the <code>--no-readme</code> flag to skip rendering README files during the download process:</p>
 <pre><code class="language-shell">scimon -r scimon.mon --no-readme
-</code></pre>
-<h3 id="skip-checksum-generation"><a class="header" href="#skip-checksum-generation">Skip Checksum Generation</a></h3>
-<p>Use the <code>--no-checksum</code> flag to skip the generation of checksums for downloaded files:</p>
-<pre><code class="language-shell">scimon -r scimon.mon --no-checksum
-</code></pre>
-<h3 id="skip-checksum-validation"><a class="header" href="#skip-checksum-validation">Skip Checksum Validation</a></h3>
-<p>Use the <code>--no-checksum-validate</code> flag to skip the validation of checksums for downloaded files:</p>
-<pre><code class="language-shell">scimon -r scimon.mon --no-checksum-validate
 </code></pre>
 <p>By using these flags, you can control how <code>scimon</code> handles different parts of the download list, ensuring a customized download process according to your needs.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flags"><a class="header" href="#flags">Flags</a></h1>
