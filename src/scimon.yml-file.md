@@ -5,6 +5,7 @@ This configuration file is utilized to set up the tool. Please utilize this defa
 ```yaml
 general:
   default_text_editor: 'notepad' # String (default: 'notepad')
+  urlfilter_open: false # Boolean (valid values: 'true' or 'false'; default: 'false')
 
 ui:
   show_header: true # Boolean (valid values: 'true' or 'false'; default: 'true')
