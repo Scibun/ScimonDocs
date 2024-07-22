@@ -89,7 +89,7 @@ Compiling scimon v0.1.0 (/path/to/your/project)
 1. Clone the repository:
    ```sh
    git clone https://github.com/Scibun/Scimon.git
-   cd repository
+   cd Scimon
    ```
 2. Setup your environment:
    ```sh
