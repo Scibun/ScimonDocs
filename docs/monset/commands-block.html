@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="mocha" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Readme Block - Scimon: Docs</title>
+        <title>Commands Block - Scimon: Docs</title>
 
 
         <!-- Custom HTML head -->
@@ -12,33 +12,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href=".\theme\catppuccin.css">
-        <link rel="stylesheet" href=".\theme\catppuccin-admonish.css">
+        <link rel="stylesheet" href="../.\theme\catppuccin.css">
+        <link rel="stylesheet" href="../.\theme\catppuccin-admonish.css">
 
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -63,7 +65,7 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('light')
+            html.classList.remove('mocha')
             html.classList.add(theme);
             var body = document.querySelector('body');
             body.classList.remove('no-js')
@@ -90,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html"><strong aria-hidden="true">1.</strong> How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html"><strong aria-hidden="true">2.</strong> Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html"><strong aria-hidden="true">3.</strong> Flags</a></li><li class="chapter-item expanded "><a href="download-block.html"><strong aria-hidden="true">4.</strong> Downloads Block</a></li><li class="chapter-item expanded "><a href="readme-block.html" class="active"><strong aria-hidden="true">5.</strong> Readme Block</a></li><li class="chapter-item expanded "><a href="commands-block.html"><strong aria-hidden="true">6.</strong> Commands Block</a></li><li class="chapter-item expanded "><a href="compress.html"><strong aria-hidden="true">7.</strong> Compress folder</a></li><li class="chapter-item expanded "><a href="open-links.html"><strong aria-hidden="true">8.</strong> Open links</a></li><li class="chapter-item expanded "><a href="markdown-render.html"><strong aria-hidden="true">9.</strong> Markdown render</a></li><li class="chapter-item expanded "><a href="scrape.html"><strong aria-hidden="true">10.</strong> Scrape</a></li><li class="chapter-item expanded "><a href="style.html"><strong aria-hidden="true">11.</strong> Style</a></li><li class="chapter-item expanded "><a href="prints.html"><strong aria-hidden="true">12.</strong> Print</a></li><li class="chapter-item expanded "><a href="providers.html"><strong aria-hidden="true">13.</strong> Providers</a></li><li class="chapter-item expanded "><a href="scimon.yml-file.html"><strong aria-hidden="true">14.</strong> Scimon.yml file</a></li><li class="chapter-item expanded "><a href="env-file.html"><strong aria-hidden="true">15.</strong> .env file</a></li><li class="chapter-item expanded "><a href="external-resources.html"><strong aria-hidden="true">16.</strong> External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../build.html">How to build</a></li><li class="chapter-item expanded "><a href="../basic-usage.html">Basic usage</a></li><li class="chapter-item expanded "><a href="../flags.html">Flags</a></li><li class="chapter-item expanded "><a href="../scrape.html">Scrape</a></li><li class="chapter-item expanded "><a href="../providers.html">Providers</a></li><li class="chapter-item expanded "><a href="../monset/what-is.html">Monset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../monset/download-block.html">Downloads Block</a></li><li class="chapter-item expanded "><a href="../monset/readme-block.html">Readme Block</a></li><li class="chapter-item expanded "><a href="../monset/commands-block.html" class="active">Commands Block</a></li><li class="chapter-item expanded "><a href="../monset/compress.html">Compress folder</a></li><li class="chapter-item expanded "><a href="../monset/open-links.html">Open links</a></li><li class="chapter-item expanded "><a href="../monset/markdown-render.html">Markdown render</a></li><li class="chapter-item expanded "><a href="../monset/style.html">Style</a></li><li class="chapter-item expanded "><a href="../monset/prints.html">Print</a></li></ol></li><li class="chapter-item expanded "><a href="../configs/index.html">Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configs/scimon.yml-file.html">Scimon.yml file</a></li><li class="chapter-item expanded "><a href="../configs/env-file.html">.env file</a></li></ol></li><li class="chapter-item expanded "><a href="../external-resources.html">External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,7 +150,7 @@
                     <h1 class="menu-title">Scimon: Docs</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -177,60 +179,49 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="readme-block"><a class="header" href="#readme-block">Readme Block</a></h1>
-<h2 id="variable"><a class="header" href="#variable">Variable</a></h2>
-<p>The <code>readme{}</code> block in the list file allows for the direct rendering of Markdown content within the list file itself.</p>
-<h3 id="fetching-content"><a class="header" href="#fetching-content">Fetching Content:</a></h3>
-<p>The URL specified in the <code>readme</code> variable is accessed to retrieve the Markdown content.</p>
-<h3 id="converting-to-text"><a class="header" href="#converting-to-text">Converting to Text:</a></h3>
-<p>The retrieved content is then converted to text format. This text content is assumed to be in Markdown format.</p>
-<h3 id="rendering-markdown"><a class="header" href="#rendering-markdown">Rendering Markdown:</a></h3>
-<p>The Markdown content retrieved from the URL is rendered directly within the list file. This means that you can include Markdown snippets within the list file, and Paimon will automatically render them during processing.</p>
-<h4 id="example-usage"><a class="header" href="#example-usage">Example Usage:</a></h4>
-<pre><code class="language-plaintext">readme = "http://example.com/readme.md"
-</code></pre>
-<p>In this example:</p>
-<ul>
-<li>The <code>readme</code> variable is assigned the URL <code>"http://example.com/readme.md"</code>.</li>
-<li>Scimon will fetch the content from the specified URL and process it as described above.</li>
-</ul>
-<h2 id="block"><a class="header" href="#block">Block</a></h2>
-<p>The Markdown content retrieved from the URL is rendered directly within the list file. This means that you can include Markdown snippets within the list file, and Paimon will automatically render them during processing.</p>
-<h4 id="example-usage-1"><a class="header" href="#example-usage-1">Example Usage:</a></h4>
-<pre><code class="language-plaintext">readme {
-    # My Project
-
-    This is an example of how you can use the `readme{}` block to include Markdown content directly in the Paimon list file.
-
-    ## Example Section
-
-    Here's an example of Python code:
-
-    ```python
-    def hello_world():
-        print("Hello, world!")
-    ```
-
-    ![Example Image](https://example.com/image.png)
+                        <h1 id="commands-block"><a class="header" href="#commands-block">Commands Block</a></h1>
+<blockquote>
+<p>This feature is <code>Experimental</code></p>
+</blockquote>
+<h2 id="command-usage-documentation"><a class="header" href="#command-usage-documentation">Command Usage Documentation</a></h2>
+<h3 id="purpose"><a class="header" href="#purpose">Purpose</a></h3>
+<p>The provided command <code>index.py</code> is used to perform a specific action or operation. In this case, it appears to be referencing a Python script named <code>index.py</code>.</p>
+<h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
+<p>To use this command, follow the syntax:</p>
+<pre><code>commands {
+    index.py
 }
 </code></pre>
-<p>In the above example:</p>
+<p>Replace <code>index.py</code> with the actual name of the Python script you want to execute.</p>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<p>Suppose you have a Python script named <code>my_script.py</code> and you want to execute it using this command. Your configuration file would look like this:</p>
+<pre><code>commands {
+    my_script.py
+}
+</code></pre>
+<h3 id="scripts-files-locations-in-operations-systems"><a class="header" href="#scripts-files-locations-in-operations-systems">Scripts files locations in Operations Systems:</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>System</th><th>Location</th></tr></thead><tbody>
+<tr><td>Linux</td><td><code>home/&lt;YOUR_USERNAME&gt;/.config/scimon/scripts/</code></td></tr>
+<tr><td>MacOS</td><td><code>/Users/&lt;YOUR_USERNAME&gt;/Library/Application Support/scimon/scripts/</code></td></tr>
+<tr><td>Windows</td><td><code>C:\Users\&lt;YOUR_USERNAME&gt;\AppData\Roaming\scimon\scripts\</code></td></tr>
+</tbody></table>
+</div>
+<h3 id="notes"><a class="header" href="#notes">Notes</a></h3>
 <ul>
-<li>The content inside the <code>readme{}</code> block is treated as Markdown.</li>
-<li>It can include titles, paragraphs, code, images, and other Markdown-supported elements.</li>
-<li>During the processing of the list file, Scimon will render this Markdown content within the context of the list file.</li>
+<li>Ensure that the Python script file (<code>index.py</code> in this case) exists in the current directory or provide the full path to the script.</li>
+<li>Make sure you have Python installed on your system and it is accessible from the command line.</li>
+<li>Only Python and JavaScript are supported.</li>
 </ul>
-<p>This provides a convenient way to include documentation, code examples, images, and other elements directly within the list file, keeping everything in one place and making it easy to maintain and share the content.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="download-block.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../monset/readme-block.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="commands-block.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../monset/compress.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -240,11 +231,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="download-block.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../monset/readme-block.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="commands-block.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../monset/compress.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -253,19 +244,27 @@
 
 
 
+        <script>
+            window.playground_line_numbers = true;
+        </script>
 
         <script>
             window.playground_copyable = true;
         </script>
 
+        <script src="../ace.js"></script>
+        <script src="../editor.js"></script>
+        <script src="../mode-rust.js"></script>
+        <script src="../theme-dawn.js"></script>
+        <script src="../theme-tomorrow_night.js"></script>
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 

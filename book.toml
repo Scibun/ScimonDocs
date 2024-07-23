@@ -10,7 +10,17 @@ title = "Scimon: Docs"
 [preprocessor.catppuccin]
 assets_version = "2.1.0" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
 
-[output]
+[output.html.playground]
+editable = true
+line-numbers = true
 
 [output.html]
+line-numbers = true
+default-theme = "mocha"
+preferred-dark-theme = "mocha"
+smart-punctuation = true
+mathjax-support = true
+copy-fonts = true
+no-section-label = true
+highlight-theme = "mocha"
 additional-css = ['.\theme\catppuccin.css', '.\theme\catppuccin-admonish.css']
