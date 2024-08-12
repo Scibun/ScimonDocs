@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Downloads Block - Scimon: Docs</title>
+        <title>Covers - Scimon: Docs</title>
 
 
         <!-- Custom HTML head -->
@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../build.html">How to build</a></li><li class="chapter-item expanded "><a href="../basic-usage.html">Basic usage</a></li><li class="chapter-item expanded "><a href="../flags.html">Flags</a></li><li class="chapter-item expanded "><a href="../scrape.html">Scrape</a></li><li class="chapter-item expanded "><a href="../providers.html">Providers</a></li><li class="chapter-item expanded "><a href="../monset/what-is.html">Monset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../monset/download-block.html" class="active">Downloads Block</a></li><li class="chapter-item expanded "><a href="../monset/readme-block.html">Readme Block</a></li><li class="chapter-item expanded "><a href="../monset/commands-block.html">Commands Block</a></li><li class="chapter-item expanded "><a href="../monset/compress.html">Compress folder</a></li><li class="chapter-item expanded "><a href="../monset/open-links.html">Open links</a></li><li class="chapter-item expanded "><a href="../monset/markdown-render.html">Markdown render</a></li><li class="chapter-item expanded "><a href="../monset/style.html">Style</a></li><li class="chapter-item expanded "><a href="../monset/prints.html">Print</a></li><li class="chapter-item expanded "><a href="../monset/covers.html">Covers</a></li></ol></li><li class="chapter-item expanded "><a href="../configs/index.html">Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configs/scimon.yml-file.html">Scimon.yml file</a></li><li class="chapter-item expanded "><a href="../configs/env-file.html">.env file</a></li></ol></li><li class="chapter-item expanded "><a href="../external-resources.html">External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../build.html">How to build</a></li><li class="chapter-item expanded "><a href="../basic-usage.html">Basic usage</a></li><li class="chapter-item expanded "><a href="../flags.html">Flags</a></li><li class="chapter-item expanded "><a href="../scrape.html">Scrape</a></li><li class="chapter-item expanded "><a href="../providers.html">Providers</a></li><li class="chapter-item expanded "><a href="../monset/what-is.html">Monset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../monset/download-block.html">Downloads Block</a></li><li class="chapter-item expanded "><a href="../monset/readme-block.html">Readme Block</a></li><li class="chapter-item expanded "><a href="../monset/commands-block.html">Commands Block</a></li><li class="chapter-item expanded "><a href="../monset/compress.html">Compress folder</a></li><li class="chapter-item expanded "><a href="../monset/open-links.html">Open links</a></li><li class="chapter-item expanded "><a href="../monset/markdown-render.html">Markdown render</a></li><li class="chapter-item expanded "><a href="../monset/style.html">Style</a></li><li class="chapter-item expanded "><a href="../monset/prints.html">Print</a></li><li class="chapter-item expanded "><a href="../monset/covers.html" class="active">Covers</a></li></ol></li><li class="chapter-item expanded "><a href="../configs/index.html">Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configs/scimon.yml-file.html">Scimon.yml file</a></li><li class="chapter-item expanded "><a href="../configs/env-file.html">.env file</a></li></ol></li><li class="chapter-item expanded "><a href="../external-resources.html">External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -179,78 +179,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="downloads-block"><a class="header" href="#downloads-block">Download’s Block</a></h1>
-<h3 id="url-list"><a class="header" href="#url-list">URL List</a></h3>
-<p>You can specify multiple URLs for downloading files. Each URL should be placed on a new line. Optionally, you can append <code>!ignore</code> to a URL to indicate that it should be skipped during the download process.</p>
-<h4 id="example-usage"><a class="header" href="#example-usage">Example Usage:</a></h4>
-<pre><code class="language-plaintext">downloads {
-    https://example.com/file1.pdf !ignore
-    https://example.com/file2.pdf
-    https://example.com/file3.pdf !ignore
-    https://example.com/file4.pdf
-    https://example.com/file5.pdf !ignore
-    https://example.com/file6.pdf
-}
+                        <h1 id="covers"><a class="header" href="#covers">Covers</a></h1>
+<p>To extract covers, use the following derivative:</p>
+<pre><code class="language-monset">covers = "path/to/covers"
 </code></pre>
-<p>In this example:</p>
+<blockquote>
+<p>To use this feature, install <code>pymupdf</code> with <code>pip install pymupdf</code></p>
+</blockquote>
+<h2 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h2>
+<p>The <code>covers</code> derivative allows you to specify a directory or path where the covers of the files should be extracted and stored. Simply assign the desired path to the derivative.</p>
+<h3 id="example-usage"><a class="header" href="#example-usage">Example Usage</a></h3>
+<p>If you want to extract covers to a specific directory, such as <code>./output/covers</code>, the configuration would look like this:</p>
+<pre><code class="language-monset">covers = "./output/covers"
+</code></pre>
+<p>In this example, all extracted covers will be saved in the <code>./output/covers</code> directory.</p>
+<h3 id="considerations"><a class="header" href="#considerations">Considerations</a></h3>
 <ul>
-<li><code>https://example.com/file1.pdf</code> will be skipped because it is followed by <code>!ignore</code>.</li>
-<li><code>https://example.com/file2.pdf</code> will be downloaded.</li>
-<li><code>https://example.com/file3.pdf</code> will be skipped because it is followed by <code>!ignore</code>.</li>
-<li><code>https://example.com/file4.pdf</code> will be downloaded.</li>
-<li><code>https://example.com/file5.pdf</code> will be skipped because it is followed by <code>!ignore</code>.</li>
-<li><code>https://example.com/file6.pdf</code> will be downloaded.</li>
+<li>Ensure that the path specified in the <code>covers</code> derivative exists and has appropriate write permissions.</li>
+<li>If the directory does not exist, the system might attempt to create it, but it is recommended that you verify the existence and accessibility of the path before performing the extraction.</li>
 </ul>
-<h3 id="path-configuration"><a class="header" href="#path-configuration">Path Configuration</a></h3>
-<p>You can specify the directory where the downloaded files should be stored by setting the <code>path</code> variable. This ensures that all files are saved in the specified folder in your file system.</p>
-<h4 id="example-usage-1"><a class="header" href="#example-usage-1">Example Usage:</a></h4>
-<pre><code class="language-plaintext">path="path/to/folder"
-</code></pre>
-<p>In this example:</p>
-<ul>
-<li>All downloaded files will be stored in the directory <code>path/to/folder</code>.</li>
-</ul>
-<h3 id="ignoring-specific-urls"><a class="header" href="#ignoring-specific-urls">Ignoring Specific URLs</a></h3>
-<p>The <code>!ignore</code> macro allows you to skip specific URLs in your download list. This is useful if you have certain files that you do not want to download during a particular operation.</p>
-<h4 id="example-usage-2"><a class="header" href="#example-usage-2">Example Usage:</a></h4>
-<pre><code class="language-plaintext">https://example.com/file1.pdf !ignore
-</code></pre>
-<p>In this example:</p>
-<ul>
-<li>The URL <code>https://example.com/file1.pdf</code> will be omitted from the download process because it is followed by the <code>!ignore</code> directive.</li>
-</ul>
-<h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
-<ol>
-<li>
-<p><strong>Download URLs</strong>: List URLs line by line. Append <code>!ignore</code> to skip specific URLs.</p>
-<pre><code class="language-plaintext">downloads {
-    https://example.com/file1.pdf !ignore
-    https://example.com/file2.pdf
-}
-</code></pre>
-</li>
-<li>
-<p><strong>Set Download Directory</strong>: Define where the files should be saved using the <code>path</code> variable.</p>
-<pre><code class="language-plaintext">path="path/to/folder"
-</code></pre>
-</li>
-<li>
-<p><strong>Skip Specific URLs</strong>: Use <code>!ignore</code> to bypass certain URLs.</p>
-<pre><code class="language-plaintext">https://example.com/file1.pdf !ignore
-</code></pre>
-</li>
-</ol>
-<p>By following these instructions, you can efficiently manage your download list, specify storage directories, and selectively ignore certain files.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../monset/what-is.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../monset/prints.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../monset/readme-block.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../configs/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -260,11 +217,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../monset/what-is.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../monset/prints.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../monset/readme-block.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../configs/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

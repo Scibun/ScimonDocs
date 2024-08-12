@@ -93,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html">How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html">Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html">Flags</a></li><li class="chapter-item expanded "><a href="scrape.html">Scrape</a></li><li class="chapter-item expanded "><a href="providers.html">Providers</a></li><li class="chapter-item expanded "><a href="monset/what-is.html">Monset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="monset/download-block.html">Downloads Block</a></li><li class="chapter-item expanded "><a href="monset/readme-block.html">Readme Block</a></li><li class="chapter-item expanded "><a href="monset/commands-block.html">Commands Block</a></li><li class="chapter-item expanded "><a href="monset/compress.html">Compress folder</a></li><li class="chapter-item expanded "><a href="monset/open-links.html">Open links</a></li><li class="chapter-item expanded "><a href="monset/markdown-render.html">Markdown render</a></li><li class="chapter-item expanded "><a href="monset/style.html">Style</a></li><li class="chapter-item expanded "><a href="monset/prints.html">Print</a></li></ol></li><li class="chapter-item expanded "><a href="configs/index.html">Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="configs/scimon.yml-file.html">Scimon.yml file</a></li><li class="chapter-item expanded "><a href="configs/env-file.html">.env file</a></li></ol></li><li class="chapter-item expanded "><a href="external-resources.html">External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="build.html">How to build</a></li><li class="chapter-item expanded "><a href="basic-usage.html">Basic usage</a></li><li class="chapter-item expanded "><a href="flags.html">Flags</a></li><li class="chapter-item expanded "><a href="scrape.html">Scrape</a></li><li class="chapter-item expanded "><a href="providers.html">Providers</a></li><li class="chapter-item expanded "><a href="monset/what-is.html">Monset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="monset/download-block.html">Downloads Block</a></li><li class="chapter-item expanded "><a href="monset/readme-block.html">Readme Block</a></li><li class="chapter-item expanded "><a href="monset/commands-block.html">Commands Block</a></li><li class="chapter-item expanded "><a href="monset/compress.html">Compress folder</a></li><li class="chapter-item expanded "><a href="monset/open-links.html">Open links</a></li><li class="chapter-item expanded "><a href="monset/markdown-render.html">Markdown render</a></li><li class="chapter-item expanded "><a href="monset/style.html">Style</a></li><li class="chapter-item expanded "><a href="monset/prints.html">Print</a></li><li class="chapter-item expanded "><a href="monset/covers.html">Covers</a></li></ol></li><li class="chapter-item expanded "><a href="configs/index.html">Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="configs/scimon.yml-file.html">Scimon.yml file</a></li><li class="chapter-item expanded "><a href="configs/env-file.html">.env file</a></li></ol></li><li class="chapter-item expanded "><a href="external-resources.html">External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -597,6 +597,25 @@ cargo --version
 <p>The <code>print</code> variable is used to display messages to the user. It is useful if you want to show a message to the user who is downloading the list.</p>
 <pre><code class="language-monset">print = "Hello, World!"
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="covers"><a class="header" href="#covers">Covers</a></h1>
+<p>To extract covers, use the following derivative:</p>
+<pre><code class="language-monset">covers = "path/to/covers"
+</code></pre>
+<blockquote>
+<p>To use this feature, install <code>pymupdf</code> with <code>pip install pymupdf</code></p>
+</blockquote>
+<h2 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h2>
+<p>The <code>covers</code> derivative allows you to specify a directory or path where the covers of the files should be extracted and stored. Simply assign the desired path to the derivative.</p>
+<h3 id="example-usage-6"><a class="header" href="#example-usage-6">Example Usage</a></h3>
+<p>If you want to extract covers to a specific directory, such as <code>./output/covers</code>, the configuration would look like this:</p>
+<pre><code class="language-monset">covers = "./output/covers"
+</code></pre>
+<p>In this example, all extracted covers will be saved in the <code>./output/covers</code> directory.</p>
+<h3 id="considerations"><a class="header" href="#considerations">Considerations</a></h3>
+<ul>
+<li>Ensure that the path specified in the <code>covers</code> derivative exists and has appropriate write permissions.</li>
+<li>If the directory does not exist, the system might attempt to create it, but it is recommended that you verify the existence and accessibility of the path before performing the extraction.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="configs"><a class="header" href="#configs">Configs</a></h1>
 <ul>
 <li><a href="configs/./configs/scimon.yml-file.html">Scimon.yml file</a></li>

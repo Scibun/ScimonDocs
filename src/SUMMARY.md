@@ -14,6 +14,7 @@
   - [Markdown render](./monset/markdown-render.md)
   - [Style](./monset/style.md)
   - [Print](./monset/prints.md)
+  - [Covers](monset/covers.md)
 - [Configs](./configs/index.md)
   - [Scimon.yml file](./configs/scimon.yml-file.md)
   - [.env file](./configs/env-file.md)
