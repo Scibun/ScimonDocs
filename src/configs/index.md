@@ -1,4 +1,4 @@
 # Configs
 
-- [Scimon.yml file](./configs/scimon.yml-file.md)
-- [.env file](./configs/env-file.md)
+- [Scimon.yml file](./scimon.yml-file.md)
+- [.env file](./env-file.md)
