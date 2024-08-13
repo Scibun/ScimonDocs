@@ -6,7 +6,11 @@ To extract covers, use the following derivative:
 covers = "path/to/covers"
 ```
 
-> To use this feature, install `pymupdf` with `pip install pymupdf`
+To use this feature, install dependencies with:
+
+```shell
+scimon --options install-requirements
+```
 
 ## How It Works
 
