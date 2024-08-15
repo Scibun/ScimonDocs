@@ -181,23 +181,10 @@
                     <main>
                         <h1 id="covers"><a class="header" href="#covers">Covers</a></h1>
 <p>To extract covers, use the following derivative:</p>
-<pre><code class="language-monset">covers = "path/to/covers"
-</code></pre>
-<p>To use this feature, install dependencies with:</p>
-<pre><code class="language-shell">scimon --options install-requirements
+<pre><code class="language-monset">covers "path/to/covers"
 </code></pre>
 <h2 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h2>
 <p>The <code>covers</code> derivative allows you to specify a directory or path where the covers of the files should be extracted and stored. Simply assign the desired path to the derivative.</p>
-<h3 id="example-usage"><a class="header" href="#example-usage">Example Usage</a></h3>
-<p>If you want to extract covers to a specific directory, such as <code>./output/covers</code>, the configuration would look like this:</p>
-<pre><code class="language-monset">covers = "./output/covers"
-</code></pre>
-<p>In this example, all extracted covers will be saved in the <code>./output/covers</code> directory.</p>
-<h3 id="considerations"><a class="header" href="#considerations">Considerations</a></h3>
-<ul>
-<li>Ensure that the path specified in the <code>covers</code> derivative exists and has appropriate write permissions.</li>
-<li>If the directory does not exist, the system might attempt to create it, but it is recommended that you verify the existence and accessibility of the path before performing the extraction.</li>
-</ul>
 
                     </main>
 

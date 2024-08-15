@@ -19,7 +19,7 @@ The Markdown content retrieved from the URL is rendered directly within the list
 #### Example Usage:
 
 ```plaintext
-readme = "http://example.com/readme.md"
+readme "http://example.com/readme.md"
 ```
 
 In this example:

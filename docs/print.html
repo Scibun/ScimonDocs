@@ -442,7 +442,7 @@ cargo --version
 <h3 id="rendering-markdown"><a class="header" href="#rendering-markdown">Rendering Markdown:</a></h3>
 <p>The Markdown content retrieved from the URL is rendered directly within the list file. This means that you can include Markdown snippets within the list file, and Paimon will automatically render them during processing.</p>
 <h4 id="example-usage-3"><a class="header" href="#example-usage-3">Example Usage:</a></h4>
-<pre><code class="language-plaintext">readme = "http://example.com/readme.md"
+<pre><code class="language-plaintext">readme "http://example.com/readme.md"
 </code></pre>
 <p>In this example:</p>
 <ul>
@@ -511,7 +511,7 @@ cargo --version
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="compress-folder"><a class="header" href="#compress-folder">Compress folder</a></h1>
 <p>To compress a folder, you can use the variable <code>compress</code> and assign the compressed file name as its value. The folder will be compressed in the root directory of the project.</p>
-<pre><code class="language-monset">compress = "downloads.zip"
+<pre><code class="language-monset">compress "downloads.zip"
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="open-links"><a class="header" href="#open-links">Open links</a></h1>
 <h2 id="open-variable"><a class="header" href="#open-variable">Open Variable</a></h2>
@@ -521,7 +521,7 @@ cargo --version
 <h3 id="usage-2"><a class="header" href="#usage-2">Usage:</a></h3>
 <p>The <code>open</code> variable is useful for directing users to relevant websites, documentation, or resources associated with the tasks or projects being processed.</p>
 <h4 id="example-usage-5"><a class="header" href="#example-usage-5">Example Usage:</a></h4>
-<pre><code class="language-plaintext">open = "https://scibun.com"
+<pre><code class="language-plaintext">open "https://example.com"
 </code></pre>
 <p>In this example:</p>
 <ul>
@@ -590,32 +590,19 @@ cargo --version
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="style"><a class="header" href="#style">Style</a></h1>
 <p>Simply use the <code>style</code> variable followed by the valid URL of the CSS file, and this will apply the defined style to the document:</p>
-<pre><code class="language-monset">style = "https://example.com/path/to/custom_style.css"
+<pre><code class="language-monset">style "https://example.com/path/to/custom_style.css"
 </code></pre>
 <p>With this configuration, the CSS file at the specified URL will be used to style the generated PDF. Ensure the URL is accessible and points to a valid CSS file.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="prints"><a class="header" href="#prints">Prints</a></h1>
 <p>The <code>print</code> variable is used to display messages to the user. It is useful if you want to show a message to the user who is downloading the list.</p>
-<pre><code class="language-monset">print = "Hello, World!"
+<pre><code class="language-monset">print "Hello, World!"
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="covers"><a class="header" href="#covers">Covers</a></h1>
 <p>To extract covers, use the following derivative:</p>
-<pre><code class="language-monset">covers = "path/to/covers"
-</code></pre>
-<p>To use this feature, install dependencies with:</p>
-<pre><code class="language-shell">scimon --options install-requirements
+<pre><code class="language-monset">covers "path/to/covers"
 </code></pre>
 <h2 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h2>
 <p>The <code>covers</code> derivative allows you to specify a directory or path where the covers of the files should be extracted and stored. Simply assign the desired path to the derivative.</p>
-<h3 id="example-usage-6"><a class="header" href="#example-usage-6">Example Usage</a></h3>
-<p>If you want to extract covers to a specific directory, such as <code>./output/covers</code>, the configuration would look like this:</p>
-<pre><code class="language-monset">covers = "./output/covers"
-</code></pre>
-<p>In this example, all extracted covers will be saved in the <code>./output/covers</code> directory.</p>
-<h3 id="considerations"><a class="header" href="#considerations">Considerations</a></h3>
-<ul>
-<li>Ensure that the path specified in the <code>covers</code> derivative exists and has appropriate write permissions.</li>
-<li>If the directory does not exist, the system might attempt to create it, but it is recommended that you verify the existence and accessibility of the path before performing the extraction.</li>
-</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="configs"><a class="header" href="#configs">Configs</a></h1>
 <ul>
 <li><a href="configs/./scimon.yml-file.html">Scimon.yml file</a></li>

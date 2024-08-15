@@ -15,7 +15,7 @@ The `open` variable is useful for directing users to relevant websites, document
 #### Example Usage:
 
 ```plaintext
-open = "https://scibun.com"
+open "https://example.com"
 ```
 
 In this example:
