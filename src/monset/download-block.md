@@ -18,6 +18,7 @@ downloads {
 ```
 
 In this example:
+
 - `https://example.com/file1.pdf` will be skipped because it is followed by `!ignore`.
 - `https://example.com/file2.pdf` will be downloaded.
 - `https://example.com/file3.pdf` will be skipped because it is followed by `!ignore`.
@@ -32,10 +33,11 @@ You can specify the directory where the downloaded files should be stored by set
 #### Example Usage:
 
 ```plaintext
-path="path/to/folder"
+path "path/to/folder"
 ```
 
 In this example:
+
 - All downloaded files will be stored in the directory `path/to/folder`.
 
 ### Ignoring Specific URLs
@@ -49,26 +51,28 @@ https://example.com/file1.pdf !ignore
 ```
 
 In this example:
+
 - The URL `https://example.com/file1.pdf` will be omitted from the download process because it is followed by the `!ignore` directive.
 
 ### Summary
 
 1. **Download URLs**: List URLs line by line. Append `!ignore` to skip specific URLs.
-    ```plaintext
-    downloads {
-        https://example.com/file1.pdf !ignore
-        https://example.com/file2.pdf
-    }
-    ```
 
+   ```plaintext
+   downloads {
+       https://example.com/file1.pdf !ignore
+       https://example.com/file2.pdf
+   }
+   ```
 2. **Set Download Directory**: Define where the files should be saved using the `path` variable.
-    ```plaintext
-    path="path/to/folder"
-    ```
 
+   ```plaintext
+   path "path/to/folder"
+   ```
 3. **Skip Specific URLs**: Use `!ignore` to bypass certain URLs.
-    ```plaintext
-    https://example.com/file1.pdf !ignore
-    ```
+
+   ```plaintext
+   https://example.com/file1.pdf !ignore
+   ```
 
 By following these instructions, you can efficiently manage your download list, specify storage directories, and selectively ignore certain files.
