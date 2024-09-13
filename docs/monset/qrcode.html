@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Monset - Scimon: Docs</title>
+        <title>QRCode - Scimon: Docs</title>
 
 
         <!-- Custom HTML head -->
@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../build.html">How to build</a></li><li class="chapter-item expanded "><a href="../basic-usage.html">Basic usage</a></li><li class="chapter-item expanded "><a href="../flags.html">Flags</a></li><li class="chapter-item expanded "><a href="../scrape.html">Scrape</a></li><li class="chapter-item expanded "><a href="../providers.html">Providers</a></li><li class="chapter-item expanded "><a href="../monset/what-is.html" class="active">Monset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../monset/download-block.html">Downloads Block</a></li><li class="chapter-item expanded "><a href="../monset/readme-block.html">Readme Block</a></li><li class="chapter-item expanded "><a href="../monset/commands-block.html">Commands Block</a></li><li class="chapter-item expanded "><a href="../monset/compress.html">Compress folder</a></li><li class="chapter-item expanded "><a href="../monset/open-links.html">Open links</a></li><li class="chapter-item expanded "><a href="../monset/markdown-render.html">Markdown render</a></li><li class="chapter-item expanded "><a href="../monset/style.html">Style</a></li><li class="chapter-item expanded "><a href="../monset/prints.html">Print</a></li><li class="chapter-item expanded "><a href="../monset/covers.html">Covers</a></li><li class="chapter-item expanded "><a href="../monset/qrcode.html">QRCode</a></li></ol></li><li class="chapter-item expanded "><a href="../configs/index.html">Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configs/scimon.yml-file.html">Scimon.yml file</a></li><li class="chapter-item expanded "><a href="../configs/env-file.html">.env file</a></li></ol></li><li class="chapter-item expanded "><a href="../external-resources.html">External Resources Usage</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../build.html">How to build</a></li><li class="chapter-item expanded "><a href="../basic-usage.html">Basic usage</a></li><li class="chapter-item expanded "><a href="../flags.html">Flags</a></li><li class="chapter-item expanded "><a href="../scrape.html">Scrape</a></li><li class="chapter-item expanded "><a href="../providers.html">Providers</a></li><li class="chapter-item expanded "><a href="../monset/what-is.html">Monset</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../monset/download-block.html">Downloads Block</a></li><li class="chapter-item expanded "><a href="../monset/readme-block.html">Readme Block</a></li><li class="chapter-item expanded "><a href="../monset/commands-block.html">Commands Block</a></li><li class="chapter-item expanded "><a href="../monset/compress.html">Compress folder</a></li><li class="chapter-item expanded "><a href="../monset/open-links.html">Open links</a></li><li class="chapter-item expanded "><a href="../monset/markdown-render.html">Markdown render</a></li><li class="chapter-item expanded "><a href="../monset/style.html">Style</a></li><li class="chapter-item expanded "><a href="../monset/prints.html">Print</a></li><li class="chapter-item expanded "><a href="../monset/covers.html">Covers</a></li><li class="chapter-item expanded "><a href="../monset/qrcode.html" class="active">QRCode</a></li></ol></li><li class="chapter-item expanded "><a href="../configs/index.html">Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../configs/scimon.yml-file.html">Scimon.yml file</a></li><li class="chapter-item expanded "><a href="../configs/env-file.html">.env file</a></li></ol></li><li class="chapter-item expanded "><a href="../external-resources.html">External Resources Usage</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -179,31 +179,22 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="monset"><a class="header" href="#monset">Monset</a></h1>
-<h2 id="what-is-monset"><a class="header" href="#what-is-monset">What is Monset?</a></h2>
-<p>Monset is a language designed specifically for downloading files. It offers a streamlined syntax that makes the process of retrieving files from the internet straightforward and efficient. By focusing on simplicity, Monset ensures that users can quickly grasp its fundamentals and start downloading files with minimal effort.</p>
-<p>The key strength of Monset lies in its user-friendly design. The syntax is intuitive, reducing the learning curve typically associated with programming languages. This makes it accessible to both beginners and experienced developers, allowing them to integrate file downloading capabilities into their projects seamlessly. Monset abstracts the complexities involved in file transfers, providing a clear and concise way to handle downloads.</p>
-<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
-<ul>
-<li><a href="./monset/download-block.html">Downloads Block</a></li>
-<li><a href="./monset/readme-block.html">Readme Block</a></li>
-<li><a href="./monset/commands-block.html">Commands Block</a></li>
-<li><a href="./monset/compress.html">Compress folder</a></li>
-<li><a href="./monset/open-links.html">Open links</a></li>
-<li><a href="./monset/markdown-render.html">Markdown render</a></li>
-<li><a href="./monset/style.html">Style</a></li>
-<li><a href="./monset/prints.html">Print</a></li>
-</ul>
+                        <h1 id="qr-code"><a class="header" href="#qr-code">QR Code</a></h1>
+<p>To generate qr codes, use the following derivative:</p>
+<pre><code class="language-monset">qrcode "path/to/qrcodes"
+</code></pre>
+<h2 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h2>
+<p>The <code>qrcode</code> derivative allows you to specify a directory or path where the QR codes should be generated and stored. Simply assign the desired path to the derivative.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../providers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../monset/covers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../monset/download-block.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../configs/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -213,11 +204,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../providers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../monset/covers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../monset/download-block.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../configs/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

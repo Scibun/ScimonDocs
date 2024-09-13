@@ -15,6 +15,7 @@
   - [Style](./monset/style.md)
   - [Print](./monset/prints.md)
   - [Covers](monset/covers.md)
+  - [QRCode](monset/qrcode.md)
 - [Configs](./configs/index.md)
   - [Scimon.yml file](./configs/scimon.yml-file.md)
   - [.env file](./configs/env-file.md)
