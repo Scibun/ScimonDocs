@@ -10,6 +10,14 @@ To download files specified in a local list, use the following command:
 scimon -r scimon.mon
 ```
 
+### Downloading Files with a Remote List
+
+To download files specified in a remote list, use the following command:
+
+```shell
+scimon -r https://example.com/scimon.mon
+```
+
 ### Useful Flags for Download List
 
 There are several flags available to customize the download process. Here are some commonly used ones:
