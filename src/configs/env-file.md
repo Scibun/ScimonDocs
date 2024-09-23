@@ -20,4 +20,4 @@ scimon --options open-env
 
 | Name           | Description                                                   |
 | -------------- | ------------------------------------------------------------- |
-| SCIMON_API_KEY | Your API key for access Scimon (*`Under in development`*) |
+| MONLIB_API_KEY | Your API key for access Scimon (*`Under in development`*) |
